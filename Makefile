@@ -6,6 +6,9 @@ all: build
 build:
 	javac lib/*.java
 
+docs: .PHONY
+	javadoc -d docs lib/*.java
+
 clean:
 	rm -f lib/*.class test/*.class test/util/*.class
 
