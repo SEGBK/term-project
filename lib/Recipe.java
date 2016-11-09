@@ -34,7 +34,7 @@ public class Recipe {
     public Step getPStep(int index) { return this.pSteps.get(index); }
     
     /**
-     * @returns a new iterable to iterate over all preparation steps.
+     * @return a new iterable to iterate over all preparation steps.
      */
     public Iterable<Step> iteratePrep() {
         final ArrayList<Step> stepSet = this.pSteps;
@@ -53,7 +53,7 @@ public class Recipe {
     public Step getStep(int index) { return this.steps.get(index); }
     
     /**
-     * @returns a new iterable to iterate over all cook steps.
+     * @return a new iterable to iterate over all cook steps.
      */
     public Iterable<Step> iterateCook() {
         final ArrayList<Step> stepSet = this.steps;
@@ -78,7 +78,7 @@ public class Recipe {
     /**
      * Create a new preparation step.
      * @param step the next step in the preparation process
-     * @returns the recipe object for chaining
+     * @return the recipe object for chaining
      */
     public Recipe addPrepStep(Step step) {
         this.pSteps.add(step);
@@ -88,7 +88,7 @@ public class Recipe {
     /**
      * Create a new cooking step.
      * @param step the next step in the cooking process
-     * @returns the recipe object for chaining
+     * @return the recipe object for chaining
      */
     public Recipe addStep(Step step) {
         this.steps.add(step);
@@ -103,7 +103,7 @@ public class Recipe {
     public Recipe setServings(float servings) { this.servings = servings; return this; }
 
     /**
-     * @returns the time required for preparation of this recipe
+     * @return the time required for preparation of this recipe
      */
     public float getPrepTime() {
         float time = 0;
@@ -117,7 +117,7 @@ public class Recipe {
     }
 
     /**
-     * @returns the time required to cook for this recipe
+     * @return the time required to cook for this recipe
      */
     public float getCookTime() {
         float time = 0;
@@ -131,7 +131,7 @@ public class Recipe {
     }
 
     /**
-     * @returns the total time required for this recipe
+     * @return the total time required for this recipe
      */
     public float getTotalTime() {
         return this.getPrepTime() + this.getCookTime();
@@ -139,7 +139,7 @@ public class Recipe {
 
     /**
      * Create an iterator to go through all the ingredients.
-     * @returns an iterable to iterate all ingredients
+     * @return an iterable to iterate all ingredients
      */
     public Iterable<String> iterateIngredients() {
         Iterator<Step> itPSteps = this.iteratePrep().iterator(), itSteps = this.iterateCook().iterator();
@@ -160,7 +160,7 @@ public class Recipe {
     /**
      * Calculate the quantity required of a particular ingredient.
      * @param ingredient the name of the ingredient
-     * @returns the quantity of ingredient required by full recipe
+     * @return the quantity of ingredient required by full recipe
      */
     public double getQuantityOf(String ingredient) {
         double quantity = 0.0;
@@ -178,7 +178,7 @@ public class Recipe {
     /**
      * Get the units of 'ingredient' required for this step.
      * @param ingredient the name of the ingredient
-     * @returns the units of measure being used
+     * @return the units of measure being used
      */
     public String getUnitsOf(String ingredient) {
         for (Step step : this.steps) {

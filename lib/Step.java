@@ -33,7 +33,7 @@ public class Step {
      * @param name the text name of the ingredient
      * @param quantity the amount of this ingredient required in this serving
      * @param units the measure of units to use for this ingredient
-     * @returns the step object for chaining
+     * @return the step object for chaining
      */
     public Step addIngredient(String name, double quantity, String units) {
         this.dblIngredients.put(name, new Ingredient(name, quantity, units));
@@ -42,7 +42,7 @@ public class Step {
 
     /**
      * Creates an iterable over the list of ingredients.
-     * @returns an iterable object to iterate ingredient names
+     * @return an iterable object to iterate ingredient names
      */
     public Iterable<String> iterateIngredients() {
         return (Iterable<String>)this.dblIngredients.keySet();
@@ -51,7 +51,7 @@ public class Step {
     /**
      * Get the quantity of 'ingredient' required for this step.
      * @param ingredient the name of the ingredient
-     * @returns the total quantity required for this step
+     * @return the total quantity required for this step
      */
     public double getQuantityOf(String ingredient) {
         if (!this.dblIngredients.containsKey(ingredient)) return 0;
@@ -61,7 +61,7 @@ public class Step {
     /**
      * Get the units of 'ingredient' required for this step.
      * @param ingredient the name of the ingredient
-     * @returns the units of measure being used
+     * @return the units of measure being used
      */
     public String getUnitsOf(String ingredient) {
         if (!this.dblIngredients.containsKey(ingredient)) return null;
