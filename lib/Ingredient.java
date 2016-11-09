@@ -1,5 +1,4 @@
 /**
- * lib/Ingredient.java - term-project
  * Stores details on the quantity of an ingredient.
  */
 

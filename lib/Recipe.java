@@ -1,6 +1,5 @@
 /**
- * lib/Recipe.java - term-project
- * Class to represent a recipe.
+ * Holds the details related to a recipe.
  */
 
 package lib;
@@ -23,17 +22,39 @@ public class Recipe {
      * The common name of the recipe.
      */
     private String name;
+
+    /**
+     * Retrieves the common name of the recipe.
+     * @return the name as a string
+     */
     public String getName() { return this.name; }
+
+    /**
+     * Sets the common name of the recipe.
+     * @return the Recipe object for chaining
+     */
     public Recipe setName(String name) { this.name = name; return this; }
 
     /**
      * A list of preparation steps to follow when cooking the recipe.
      */
     private ArrayList<Step> pSteps;
-    public int getNumberOfPSteps() { return this.pSteps.size(); }
-    public Step getPStep(int index) { return this.pSteps.get(index); }
-    
+
     /**
+     * Retrieves the number of preparation steps required.
+     * @return the number of preparation steps
+     */
+    public int getNumberOfPSteps() { return this.pSteps.size(); }
+
+    /**
+     * Retrieves preparation step at a given index.
+     * @param index the index of the step to be fetched (starts at 0)
+     * @return the Step object representing the preparation step
+     */
+    public Step getPStep(int index) { return this.pSteps.get(index); }
+
+    /**
+     * Creates a new iterable to go over the preparation steps.
      * @return a new iterable to iterate over all preparation steps.
      */
     public Iterable<Step> iteratePrep() {
@@ -49,10 +70,22 @@ public class Recipe {
      * A list of steps to follow when cooking the recipe.
      */
     private ArrayList<Step> steps;
+
+    /**
+     * Retrieves the number of cooking steps required.
+     * @return the number of cooking steps
+     */
     public int getNumberOfSteps() { return this.steps.size(); }
+
+    /**
+     * Retrieves a specific cooking step.
+     * @param index the index of the step to be fetched (starts at 0)
+     * @return the Step object representing the cooking step
+     */
     public Step getStep(int index) { return this.steps.get(index); }
     
     /**
+     * Creates a new iterable to go over the cooking steps.
      * @return a new iterable to iterate over all cook steps.
      */
     public Iterable<Step> iterateCook() {
@@ -65,7 +98,7 @@ public class Recipe {
     }
 
     /**
-     * Generalized iterator class to iterate over
+     * Generalized iterator class to iterate over a set of steps.
      */
     private class StepsIterator implements Iterator<Step> {
         private Iterator<Step> i;
@@ -78,7 +111,7 @@ public class Recipe {
     /**
      * Create a new preparation step.
      * @param step the next step in the preparation process
-     * @return the recipe object for chaining
+     * @return the Recipe object for chaining
      */
     public Recipe addPrepStep(Step step) {
         this.pSteps.add(step);
@@ -88,7 +121,7 @@ public class Recipe {
     /**
      * Create a new cooking step.
      * @param step the next step in the cooking process
-     * @return the recipe object for chaining
+     * @return the Recipe object for chaining
      */
     public Recipe addStep(Step step) {
         this.steps.add(step);
@@ -98,15 +131,27 @@ public class Recipe {
     /**
      * The number of servings for which to return quantities.
      */
-    private float servings;
-    public float getServings() { return this.servings; }
-    public Recipe setServings(float servings) { this.servings = servings; return this; }
+    private double servings;
 
     /**
+     * Retrieves the number of servings prepared by this recipe.
+     * @return the number of servings prepared by this recipe
+     */
+    public double getServings() { return this.servings; }
+
+    /**
+     * Scales the recipe to amounts required for 'servings' servings.
+     * @param servings the number of servings to scale to
+     * @return the Recipe object for chaining
+     */
+    public Recipe setServings(double servings) { this.servings = servings; return this; }
+
+    /**
+     * Retrieves the amount of time required to prepare this recipe.
      * @return the time required for preparation of this recipe
      */
-    public float getPrepTime() {
-        float time = 0;
+    public double getPrepTime() {
+        double time = 0;
 
         // sum up the time lengths of all preparation steps 
         for (Step step : this.pSteps) {
@@ -117,10 +162,11 @@ public class Recipe {
     }
 
     /**
-     * @return the time required to cook for this recipe
+     * Retrieves the amount of time required to cook this recipe.
+     * @return the time required to cook this recipe
      */
-    public float getCookTime() {
-        float time = 0;
+    public double getCookTime() {
+        double time = 0;
 
         // sum up the time lengths of all cooking steps 
         for (Step step : this.steps) {
@@ -131,9 +177,10 @@ public class Recipe {
     }
 
     /**
+     * Retrieves the total time required to prepare and cook this recipe.
      * @return the total time required for this recipe
      */
-    public float getTotalTime() {
+    public double getTotalTime() {
         return this.getPrepTime() + this.getCookTime();
     }
 

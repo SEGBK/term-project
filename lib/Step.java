@@ -1,5 +1,4 @@
 /**
- * lib/Step.java - term-project
  * Represents a single step in the Recipe.
  */
 
@@ -19,7 +18,18 @@ public class Step {
      * The time it takes to execute this step (in minutes).
      */
     private double time;
+
+    /**
+     * Retrieves the amount of time to execute this step.
+     * @return the amount of time required for this step
+     */
     public double getTime() { return this.time; }
+
+    /**
+     * Sets the time required to execute this step.
+     * @param time the number of minutes required to execute this step
+     * @return the Step object for chaining
+     */
     public Step setTime(double time) { this.time = time; return this; }
 
     /**
@@ -33,7 +43,7 @@ public class Step {
      * @param name the text name of the ingredient
      * @param quantity the amount of this ingredient required in this serving
      * @param units the measure of units to use for this ingredient
-     * @return the step object for chaining
+     * @return the Step object for chaining
      */
     public Step addIngredient(String name, double quantity, String units) {
         this.dblIngredients.put(name, new Ingredient(name, quantity, units));
@@ -72,6 +82,17 @@ public class Step {
      * The description of this step.
      */
     private String text;
+
+    /**
+     * Retrieves the instructions of how to execute this step.
+     * @return the instructions of how to execute this step
+     */
     public String getText() { return this.text; }
+
+    /**
+     * Sets the instructions of how to execute this step.
+     * @param text the instructions of how to execute this step
+     * @return the Step object for chaining
+     */
     public Step setText(String text) { this.text = text; return this; }
 }
