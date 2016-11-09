@@ -1,9 +1,8 @@
+package lib;
+
 /**
  * Stores details on the quantity of an ingredient.
  */
-
-package lib;
-
 public class Ingredient implements Comparable<Ingredient> {
     private double quantity;
     private String name, units;

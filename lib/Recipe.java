@@ -1,13 +1,12 @@
-/**
- * Holds the details related to a recipe.
- */
-
 package lib;
 
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
+/**
+ * Holds the details related to a recipe.
+ */
 public class Recipe {
     /**
      * Creates a new empty recipe object.

@@ -1,11 +1,10 @@
-/**
- * Represents a single step in the Recipe.
- */
-
 package lib;
 
 import java.util.HashMap;
 
+/**
+ * Represents a single step in the Recipe.
+ */
 public class Step {
     /**
      * Creates a new step object.
