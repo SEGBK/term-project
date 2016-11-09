@@ -1,4 +1,0 @@
-[submodule "docs"]
-	path = docs
-	url = git@github.com:SEGBK/term-project.git
-	branch = gh-pages
