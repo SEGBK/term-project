@@ -2,7 +2,7 @@
 
 Library for term project.
 
-Documentation available [here](https://segbk.github.io/term-project/).
+Complete API reference available [here](https://segbk.github.io/term-project/).
 
 ## Using the library
 
