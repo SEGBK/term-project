@@ -1,12 +1,10 @@
-/**
- * test/Runner.java - lab3
- * Runs tests and contains test helpers.
- */
-
 package test.util;
 
 import test.*;
 
+/**
+ * Runs tests and contains test helpers.
+ */
 public final class Runner {
     public static void main(String[] args) {
         new TestEnd() {
@@ -17,6 +15,7 @@ public final class Runner {
                  * All the objects below should implement
                  * the interface Test.
                  */
+                new SampleTest()
             };
 
             public void run(Boolean success) {
