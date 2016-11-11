@@ -1,4 +1,4 @@
-package seg2105;
+package librecipe;
 
 import java.util.HashMap;
 

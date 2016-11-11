@@ -1,4 +1,4 @@
-package seg2105;
+package librecipe;
 
 import java.util.Iterator;
 import java.util.ArrayList;

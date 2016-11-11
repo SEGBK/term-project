@@ -1,4 +1,4 @@
-package seg2105;
+package librecipe;
 
 /**
  * Stores details on the quantity of an ingredient.

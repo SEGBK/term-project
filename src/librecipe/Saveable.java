@@ -1,4 +1,4 @@
-package seg2105;
+package librecipe;
 
 /**
  * Similar to Java's serializable interface, but
