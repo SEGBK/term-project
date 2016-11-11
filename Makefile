@@ -1,16 +1,19 @@
 ## Makefile
-## build phases for lib.*
+## build phases for recipe lib
 
-all: build
+all: jar
 
 build:
-	javac lib/*.java
+	cd src && javac -cp ../lib librecipe/*.java
+
+jar: build
+	cd src && jar cf ../librecipe.jar librecipe/*.class
 
 docs: .PHONY
-	javadoc -d docs lib/*.java
+	javadoc -d docs src/librecipe/*.java
 
 clean:
-	rm -f lib/*.class test/*.class test/util/*.class
+	rm -f librecipe.jar src/librecipe/*.class test/*.class test/util/*.class
 
 test: .PHONY
 	javac test/util/Runner.java
