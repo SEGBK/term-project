@@ -1,4 +1,4 @@
-package lib;
+package seg2105;
 
 /**
  * Stores details on the quantity of an ingredient.

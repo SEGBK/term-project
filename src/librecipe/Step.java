@@ -1,4 +1,4 @@
-package lib;
+package seg2105;
 
 import java.util.HashMap;
 

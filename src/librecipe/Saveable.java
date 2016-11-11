@@ -1,4 +1,4 @@
-package lib;
+package seg2105;
 
 /**
  * Similar to Java's serializable interface, but

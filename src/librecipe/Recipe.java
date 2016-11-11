@@ -1,4 +1,4 @@
-package lib;
+package seg2105;
 
 import java.util.Iterator;
 import java.util.ArrayList;
