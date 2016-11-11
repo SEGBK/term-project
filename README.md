@@ -1,4 +1,4 @@
-# lib.*
+# libRecipe
 
 Library for term project.
 
