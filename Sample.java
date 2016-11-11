@@ -2,7 +2,7 @@
  * An example to demonstrate recipes.
  */
 
-import lib.*;
+import librecipe.*;
 
 public class Sample {
     public static void main(String[] args) {
@@ -41,12 +41,12 @@ public class Sample {
         printRecipe(recipe);
 
         // ...
-        System.out.println("---");
-        final String saved = recipe.serialize();
+        //System.out.println("---");
+        //final String saved = recipe.serialize();
         // ....
 
-        Recipe newRecipe = new Recipe(saved);
-        printRecipe(newRecipe);
+        //Recipe newRecipe = new Recipe(saved);
+        //printRecipe(newRecipe);
     }
 
     private static void printRecipe(Recipe recipe) {
