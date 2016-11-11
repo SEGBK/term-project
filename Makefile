@@ -1,25 +1,28 @@
 ## Makefile
 ## build phases for recipe lib
 
+CLASSPATH	= .:$(PWD)/lib/jackson-all-1.9.0.jar
+JAR_FILE	= librecipe.jar
+
 all: run
 
 build:
-	cd src && javac -cp ../lib librecipe/*.java
+	cd src && javac -cp "$(CLASSPATH)" librecipe/*.java
 
 jar: build
-	cd src && jar cf ../librecipe.jar librecipe/*.class
+	cd src && jar cf ../$(JAR_FILE) librecipe/*.class
 
 run: jar
-	java -cp ".:${PWD}/librecipe.jar" Sample
+	java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
 
 docs: .PHONY
 	javadoc -d docs src/librecipe/*.java
 
 clean:
-	rm -f librecipe.jar src/librecipe/*.class test/*.class test/util/*.class
+	rm -f $(JAR_FILE) src/librecipe/*.class test/*.class test/util/*.class
 
-test: .PHONY
-	javac -cp ./ test/util/Runner.java
-	java test/util/Runner
+test: jar
+	javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" test/util/Runner.java
+	java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" test/util/Runner
 
 .PHONY:
