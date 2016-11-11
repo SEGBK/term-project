@@ -4,6 +4,13 @@ Library for term project.
 
 Documentation available [here](https://segbk.github.io/term-project/).
 
+## Using the library
+
+A prebuilt jar file is available in [librecipe.jar](librecipe.jar).
+
+To use, include this jar file as well as all jar files in [`lib/`](lib)
+in your classpath when compiling and running your own code.
+
 ## Sample code
 
 There is sample code available for learning about how to use the library
