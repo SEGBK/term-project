@@ -1,4 +1,4 @@
-package lib;
+package librecipe;
 
 import java.util.HashMap;
 

@@ -2,7 +2,7 @@
  * An example to demonstrate recipes.
  */
 
-import lib.*;
+import librecipe.*;
 
 public class Sample {
     public static void main(String[] args) {
@@ -38,6 +38,18 @@ public class Sample {
             recipe.addStep(sStep);
         }
 
+        printRecipe(recipe);
+
+        // ...
+        //System.out.println("---");
+        //final String saved = recipe.serialize();
+        // ....
+
+        //Recipe newRecipe = new Recipe(saved);
+        //printRecipe(newRecipe);
+    }
+
+    private static void printRecipe(Recipe recipe) {
         System.out.format(
             "Recipe: %s\n" +
             "Preparation time: %.2f\n" +
