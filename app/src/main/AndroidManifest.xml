@@ -30,6 +30,14 @@
         <activity
             android:name=".activities.Recipe"
             android:label="@string/title_activity_recipe"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.AddIngredientsStep"
+            android:label="@string/title_activity_add_ingredients_step"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.AddInstructionsStep"
+            android:label="@string/title_activity_add_instructions_step"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

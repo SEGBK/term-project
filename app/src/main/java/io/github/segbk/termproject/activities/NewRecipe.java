@@ -45,26 +45,15 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
         ArrayAdapter<String> typeSpinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Type.getTypes());
         type_spinner.setAdapter(typeSpinnerArrayAdapter);
 
-        Button imageButton = (Button)findViewById(R.id.img_button);
-        imageButton.setOnClickListener(this);
+        Button next_step_button = (Button)findViewById(R.id.btn_next);
+        next_step_button.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View view) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, 1);
-        }
+        Intent i = new Intent(this, AddIngredientsStep.class);
+        startActivity(i);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            ImageView v = (ImageView)findViewById(R.id.recipe_img);
-            v.setImageBitmap(imageBitmap);
-        }
-    }
 }
