@@ -46,6 +46,13 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editText3"
+                android:hint="Description" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -88,16 +95,23 @@
             android:id="@+id/type_spinner"
             android:layout_weight="1" />
     </LinearLayout>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="285dp"
-        android:id="@+id/recipe_img" />
 
-    <Button
-        android:text="Add Image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/img_button"
-        android:background="@drawable/btn_submit_ripple"
-        android:gravity="center_vertical|center_horizontal|center" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_next"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@android:color/white"
+            android:background="@drawable/btn_default" />
+
+    </RelativeLayout>
+
 </LinearLayout>
