@@ -34,6 +34,8 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_recipe);
 
+        getSupportActionBar().setTitle("New Recipe");
+
         //LinearLayout layout = (LinearLayout)findViewById(R.id.animatelayout);
         //YoYo.with(BounceInDown).playOn(layout);
 
