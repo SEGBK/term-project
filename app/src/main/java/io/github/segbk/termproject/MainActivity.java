@@ -33,7 +33,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import java.util.ArrayList;
 
 import io.github.segbk.termproject.activities.NewRecipe;
+import io.github.segbk.termproject.adapters.RecipeMainAdapter;
 import io.github.segbk.termproject.listeners.RecipeListOnClickListener;
+import io.github.segbk.termproject.models.Ingredient;
+import io.github.segbk.termproject.models.Recipe;
+import io.github.segbk.termproject.models.Step;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -58,12 +62,26 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Ingredient sugar = new Ingredient("sugar","1 TSP");
+        Ingredient flour = new Ingredient("flour","2 Cups");
+        Ingredient salt = new Ingredient("salt","1 Pinch");
+        Ingredient water = new Ingredient("water","1 Cup");
+
+        Ingredient[] i = {sugar, flour};
+        Ingredient[] i2 = {flour, water};
+        Ingredient[] i3 = {water, salt};
+
+        Step general = new Step("Dummy Step");
+        Step[] stepList = {general,general,general,general};
+
+
+
         ListView recipeList = (ListView)findViewById(R.id.recipe_list);
-        ArrayList<String> l = new ArrayList<String>();
-        l.add("First");
-        l.add("Second");
-        l.add("Third");
-        recipeList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, l));
+        ArrayList<Recipe> l = new ArrayList<Recipe>();
+        l.add(new Recipe("Sugar and Flour",i,stepList));
+        l.add(new Recipe("Water and Flour",i2,stepList));
+        l.add(new Recipe("Saltwater",i3,stepList));
+        recipeList.setAdapter(new RecipeMainAdapter(this, R.layout.recipe_layout_item, l));
         recipeList.setOnItemClickListener(new RecipeListOnClickListener(this));
     }
 
@@ -89,8 +107,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
