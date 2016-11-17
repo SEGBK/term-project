@@ -4,8 +4,11 @@
 
 import librecipe.*;
 
+import org.codehaus.jackson.*;
+import org.codehaus.jackson.map.*;
+
 public class Sample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Recipe recipe = new Recipe();
 
         recipe.setName("Cupcakes");
@@ -40,13 +43,10 @@ public class Sample {
 
         printRecipe(recipe);
 
-        // ...
-        //System.out.println("---");
-        //final String saved = recipe.serialize();
-        // ....
-
-        //Recipe newRecipe = new Recipe(saved);
-        //printRecipe(newRecipe);
+        System.out.println("---");
+        final String saved = recipe.serialize();
+        Recipe newRecipe = new Recipe(saved);
+        printRecipe(newRecipe);
     }
 
     private static void printRecipe(Recipe recipe) {
@@ -56,12 +56,12 @@ public class Sample {
             "Cooking time: %.2f\n" +
             "\n",
             recipe.getName(),
-            recipe.getPrepTime(),
-            recipe.getCookTime()
+            recipe.prepTime(),
+            recipe.cookTime()
         );
 
         System.out.println("Ingredients:");
-        for (String step : recipe.iterateIngredients()) System.out.format(" - (%.1f %s) %s.\n", recipe.getQuantityOf(step), recipe.getUnitsOf(step), step);
+        for (String step : recipe.iterateIngredients()) System.out.format(" - (%.1f %s) %s.\n", recipe.quantityOf(step), recipe.unitsOf(step), step);
 
         System.out.println("\nPreparation:");
         for (Step step : recipe.iteratePrep()) System.out.format(" - %s (%.1f mins).\n", step.getText(), step.getTime());
