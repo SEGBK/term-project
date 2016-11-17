@@ -9,10 +9,10 @@ import java.util.LinkedHashMap;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import javax.net.ssl.HttpsURLConnection;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.codehaus.jackson.map.JsonMappingException;
+
+import java.lang.Runnable;
+import java.lang.Thread;
+import java.util.ArrayList;
 
 /**
  * Handles the storage and retreival of all recipes.
@@ -63,12 +63,7 @@ public class CookBook {
     /**
      * Map between recipe names and Firebase IDs.
      */
-    private HashMap<String,String> map = new HashMap<>();
-
-    /**
-     * Map between Firebase IDs and Recipe objects.
-     */
-    private LinkedHashMap<String,Recipe> mapRecipes = new LinkedHashMap<>();
+    private RecipeMap map;
 
     /**
      * Creates a new Recipe to the list.
@@ -80,7 +75,7 @@ public class CookBook {
         name = name.substring(0, name.length() - 2);
 
         map.put(recipe.getName(), name);
-        mapRecipes.put(name, recipe);
+        this.request("PUT", "recipe-map.json", map.serialize());
     }
 
     /**
@@ -106,8 +101,33 @@ public class CookBook {
      * @throws Exception if JSON deserialization fails
      */
     public CookBook() throws Exception {
-        String mapStr = this.request("GET", "recipes.json", null);
-        this.mapRecipes = (new ObjectMapper().readValue("{\"map\":" + mapStr + "}", RecipeSet.class)).getMap();
-        for (String key : this.mapRecipes.keySet()) this.map.put(this.mapRecipes.get(key).getName(), key);
+        final CookBook that = this;
+        this.ready = new ArrayList<>();
+
+        new Thread() {
+            public void run() {
+                try {
+                    String json = that.request("GET", "recipe-map.json", null);
+                    if (json.equals("null")) that.map = new RecipeMap();
+                    else that.map = new RecipeMap(json);
+                } catch (Exception ex) {
+                    for (EventHandler run : that.error) run.run(ex.getMessage());
+                }
+
+                for (Runnable run : that.ready) run.run();
+            }
+        }.start();
     }
+
+    /**
+     * Add an event listener for when CookBook errors out.
+     */
+    private ArrayList<EventHandler> error;
+    public void onError(EventHandler run) { this.error.add(run); }
+
+    /**
+     * Add an event listener for when CookBook is ready.
+     */
+    private ArrayList<Runnable> ready;
+    public void onReady(Runnable run) { this.ready.add(run); }
 }
