@@ -1,16 +1,29 @@
 package librecipe;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
 
 /**
  * Represents a single step in the Recipe.
  */
-public class Step {
+public class Step extends Saveable {
     /**
      * Creates a new step object.
      */
     public Step() {
         this.dblIngredients = new LinkedHashMap<>();
+    }
+
+    /**
+     * Creates a new step object from JSON.
+     * @param serialized the JSON string to deserialize from
+     */
+    public Step(String serialized) throws JsonParseException, IOException {
+        this.deserialize(serialized);
     }
 
     /**
@@ -112,4 +125,33 @@ public class Step {
      * @return the Step object for chaining
      */
     public Step setText(String text) { this.text = text; return this; }
+
+    /**
+     * Serializes a Saveable object into a string.
+     * @return Ingredient in the form of a string (contains unreadable characters)
+     */
+    public String serialize() throws JsonMappingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
+        return mapper.writeValueAsString(this);
+    }
+
+    /**
+     * Deserializes a string into a Ingredient object.
+     * @param serialized the original serialized object as a string
+     * @return the Ingredient object for chaining
+     */
+    protected Step deserialize(String serialized) throws JsonParseException, IOException {
+        // deserialize the object
+        ObjectMapper mapper = new ObjectMapper();
+        Step unwrapped = mapper.readValue(serialized, Step.class);
+
+        // copy properties over
+        this.setText(unwrapped.getText());
+        this.setTime(unwrapped.getTime());
+        this.setIngredients(unwrapped.getIngredients());
+
+        // return for chaining
+        return this;
+    }
 }
