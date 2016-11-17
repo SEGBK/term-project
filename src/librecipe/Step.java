@@ -1,6 +1,6 @@
 package librecipe;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Represents a single step in the Recipe.
@@ -10,7 +10,7 @@ public class Step {
      * Creates a new step object.
      */
     public Step() {
-        this.dblIngredients = new HashMap<>();
+        this.dblIngredients = new LinkedHashMap<>();
     }
 
     /**
@@ -35,7 +35,7 @@ public class Step {
      * Map of ingredients to quantity required for one
      * serving.
      */
-    HashMap<String,Ingredient> dblIngredients;
+    LinkedHashMap<String,Ingredient> dblIngredients;
 
     /**
      * Adds a new ingredient to this step.
