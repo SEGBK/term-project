@@ -9,10 +9,11 @@ all: run
 build:
 	cd src && javac -cp "$(CLASSPATH)" librecipe/*.java
 
-jar: build
+$(JAR_FILE): build
 	cd src && jar cf ../$(JAR_FILE) librecipe/*.class
 
-run: jar
+run: $(JAR_FILE)
+	javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample.java
 	java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
 
 docs: .PHONY
@@ -21,7 +22,7 @@ docs: .PHONY
 clean:
 	rm -f $(JAR_FILE) src/librecipe/*.class test/*.class test/util/*.class
 
-test: jar
+test: $(JAR_FILE)
 	javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" test/util/Runner.java
 	java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" test/util/Runner
 
