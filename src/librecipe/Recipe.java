@@ -235,4 +235,34 @@ public class Recipe {
 
         return null;
     }
+
+    /**
+     * Get full list of prep steps.
+     * @return the ArrayList<> of prep steps
+     */
+    public ArrayList<Step> getPSteps() { return this.pSteps; }
+
+    /**
+     * Set full list of prep steps.
+     * @return the ArrayList<> of prep steps
+     */
+    public void setPSteps(ArrayList<Step> pSteps) {
+        this.pSteps = pSteps;
+        return this;
+    }
+
+    /**
+     * Get full list of steps.
+     * @return the ArrayList<> of prep steps
+     */
+    public ArrayList<Step> getSteps() { return this.steps; }
+
+    /**
+     * Set full list of steps.
+     * @return the ArrayList<> of steps
+     */
+    public void setSteps(ArrayList<Step> steps) {
+        this.steps = steps;
+        return this;
+    }
 }
