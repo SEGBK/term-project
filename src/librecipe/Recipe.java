@@ -279,7 +279,6 @@ public class Recipe extends Saveable {
      */
     public String serialize() throws JsonMappingException, IOException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
         return mapper.writeValueAsString(this);
     }
 
