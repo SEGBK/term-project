@@ -121,12 +121,12 @@ public class CookBook {
     /**
      * Add an event listener for when CookBook errors out.
      */
-    private ArrayList<EventHandler> error;
     public void onError(EventHandler run) { this.error.add(run); }
+    private ArrayList<EventHandler> error;
 
     /**
      * Add an event listener for when CookBook is ready.
      */
-    private ArrayList<Runnable> ready;
     public void onReady(Runnable run) { this.ready.add(run); }
+    private ArrayList<Runnable> ready;
 }
