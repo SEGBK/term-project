@@ -1,13 +1,18 @@
 package librecipe;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.map.JsonMappingException;
 
 /**
  * Holds the details related to a recipe.
  */
-public class Recipe {
+public class Recipe extends Saveable {
     /**
      * Creates a new empty recipe object.
      */
@@ -15,6 +20,14 @@ public class Recipe {
         this.steps = new ArrayList<>();
         this.pSteps = new ArrayList<>();
         this.servings = 1;
+    }
+
+    /**
+     * Creates a new Recipe object from JSON.
+     * @param json a string of JSON to read from
+     */
+    public Recipe(String json) throws JsonParseException, IOException {
+        this.deserialize(json);
     }
 
     /**
@@ -43,14 +56,14 @@ public class Recipe {
      * Retrieves the number of preparation steps required.
      * @return the number of preparation steps
      */
-    public int getNumberOfPSteps() { return this.pSteps.size(); }
+    public int numberOfPSteps() { return this.pSteps.size(); }
 
     /**
      * Retrieves preparation step at a given index.
      * @param index the index of the step to be fetched (starts at 0)
      * @return the Step object representing the preparation step
      */
-    public Step getPStep(int index) { return this.pSteps.get(index); }
+    public Step pStep(int index) { return this.pSteps.get(index); }
 
     /**
      * Creates a new iterable to go over the preparation steps.
@@ -74,14 +87,14 @@ public class Recipe {
      * Retrieves the number of cooking steps required.
      * @return the number of cooking steps
      */
-    public int getNumberOfSteps() { return this.steps.size(); }
+    public int numberOfSteps() { return this.steps.size(); }
 
     /**
      * Retrieves a specific cooking step.
      * @param index the index of the step to be fetched (starts at 0)
      * @return the Step object representing the cooking step
      */
-    public Step getStep(int index) { return this.steps.get(index); }
+    public Step step(int index) { return this.steps.get(index); }
     
     /**
      * Creates a new iterable to go over the cooking steps.
@@ -149,7 +162,7 @@ public class Recipe {
      * Retrieves the amount of time required to prepare this recipe.
      * @return the time required for preparation of this recipe
      */
-    public double getPrepTime() {
+    public double prepTime() {
         double time = 0;
 
         // sum up the time lengths of all preparation steps 
@@ -164,7 +177,7 @@ public class Recipe {
      * Retrieves the amount of time required to cook this recipe.
      * @return the time required to cook this recipe
      */
-    public double getCookTime() {
+    public double cookTime() {
         double time = 0;
 
         // sum up the time lengths of all cooking steps 
@@ -179,8 +192,8 @@ public class Recipe {
      * Retrieves the total time required to prepare and cook this recipe.
      * @return the total time required for this recipe
      */
-    public double getTotalTime() {
-        return this.getPrepTime() + this.getCookTime();
+    public double totalTime() {
+        return this.prepTime() + this.cookTime();
     }
 
     /**
@@ -208,7 +221,7 @@ public class Recipe {
      * @param ingredient the name of the ingredient
      * @return the quantity of ingredient required by full recipe
      */
-    public double getQuantityOf(String ingredient) {
+    public double quantityOf(String ingredient) {
         double quantity = 0.0;
 
         // sum up the quantity required by each step
@@ -226,7 +239,7 @@ public class Recipe {
      * @param ingredient the name of the ingredient
      * @return the units of measure being used
      */
-    public String getUnitsOf(String ingredient) {
+    public String unitsOf(String ingredient) {
         for (Step step : this.steps) {
             if (step.getQuantityOf(ingredient) > 0) {
                 return step.getUnitsOf(ingredient);
@@ -234,5 +247,59 @@ public class Recipe {
         }
 
         return null;
+    }
+
+    /**
+     * Get full list of prep steps.
+     * @return the ArrayList<> of prep steps
+     */
+    public ArrayList<Step> getPSteps() { return this.pSteps; }
+
+    /**
+     * Set full list of prep steps.
+     * @return the ArrayList<> of prep steps
+     */
+    public void setPSteps(ArrayList<Step> pSteps) { this.pSteps = pSteps; }
+
+    /**
+     * Get full list of steps.
+     * @return the ArrayList<> of prep steps
+     */
+    public ArrayList<Step> getSteps() { return this.steps; }
+
+    /**
+     * Set full list of steps.
+     * @return the ArrayList<> of steps
+     */
+    public void setSteps(ArrayList<Step> steps) { this.steps = steps; }
+
+    /**
+     * Serializes a Recipe object into a string.
+     * @return Recipe in the form of a string (contains unreadable characters)
+     */
+    public String serialize() throws JsonMappingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
+        return mapper.writeValueAsString(this);
+    }
+
+    /**
+     * Deserializes a string into a Recipe object.
+     * @param serialized the original serialized object as a string
+     * @return the Recipe object for chaining
+     */
+    protected Recipe deserialize(String serialized) throws JsonParseException, IOException {
+        // deserialize the object
+        ObjectMapper mapper = new ObjectMapper();
+        Recipe unwrapped = mapper.readValue(serialized, Recipe.class);
+
+        // copy properties over
+        this.setName(unwrapped.getName());
+        this.setServings(unwrapped.getServings());
+        this.setPSteps(unwrapped.getPSteps());
+        this.setSteps(unwrapped.getSteps());
+
+        // return for chaining
+        return this;
     }
 }

@@ -1,16 +1,29 @@
 package librecipe;
 
-import java.util.HashMap;
+import java.io.IOException;
+import java.util.LinkedHashMap;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
 
 /**
  * Represents a single step in the Recipe.
  */
-public class Step {
+public class Step extends Saveable {
     /**
      * Creates a new step object.
      */
     public Step() {
-        this.dblIngredients = new HashMap<>();
+        this.dblIngredients = new LinkedHashMap<>();
+    }
+
+    /**
+     * Creates a new step object from JSON.
+     * @param serialized the JSON string to deserialize from
+     */
+    public Step(String serialized) throws JsonParseException, IOException {
+        this.deserialize(serialized);
     }
 
     /**
@@ -35,7 +48,7 @@ public class Step {
      * Map of ingredients to quantity required for one
      * serving.
      */
-    HashMap<String,Ingredient> dblIngredients;
+    LinkedHashMap<String,Ingredient> dblIngredients;
 
     /**
      * Adds a new ingredient to this step.
@@ -78,6 +91,24 @@ public class Step {
     }
 
     /**
+     * Get full map of ingredients.
+     * @return the underlying map of ingredients
+     */
+    public LinkedHashMap<String,Ingredient> getIngredients() {
+        return this.dblIngredients;
+    }
+
+    /**
+     * Set full map of ingredients.
+     * @param the Ingredients map to replace the current one with
+     * @return the Step object for chaining
+     */
+    public Step setIngredients(LinkedHashMap<String,Ingredient> ingredients) {
+        this.dblIngredients = ingredients;
+        return this;
+    }
+
+    /**
      * The description of this step.
      */
     private String text;
@@ -94,4 +125,33 @@ public class Step {
      * @return the Step object for chaining
      */
     public Step setText(String text) { this.text = text; return this; }
+
+    /**
+     * Serializes a Saveable object into a string.
+     * @return Step in the form of a string (contains unreadable characters)
+     */
+    public String serialize() throws JsonMappingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
+        return mapper.writeValueAsString(this);
+    }
+
+    /**
+     * Deserializes a string into a Step object.
+     * @param serialized the original serialized object as a string
+     * @return the Step object for chaining
+     */
+    protected Step deserialize(String serialized) throws JsonParseException, IOException {
+        // deserialize the object
+        ObjectMapper mapper = new ObjectMapper();
+        Step unwrapped = mapper.readValue(serialized, Step.class);
+
+        // copy properties over
+        this.setText(unwrapped.getText());
+        this.setTime(unwrapped.getTime());
+        this.setIngredients(unwrapped.getIngredients());
+
+        // return for chaining
+        return this;
+    }
 }
