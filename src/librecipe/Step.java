@@ -128,7 +128,7 @@ public class Step extends Saveable {
 
     /**
      * Serializes a Saveable object into a string.
-     * @return Ingredient in the form of a string (contains unreadable characters)
+     * @return Step in the form of a string (contains unreadable characters)
      */
     public String serialize() throws JsonMappingException, IOException {
         ObjectMapper mapper = new ObjectMapper();
@@ -137,9 +137,9 @@ public class Step extends Saveable {
     }
 
     /**
-     * Deserializes a string into a Ingredient object.
+     * Deserializes a string into a Step object.
      * @param serialized the original serialized object as a string
-     * @return the Ingredient object for chaining
+     * @return the Step object for chaining
      */
     protected Step deserialize(String serialized) throws JsonParseException, IOException {
         // deserialize the object
