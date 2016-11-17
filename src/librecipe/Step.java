@@ -78,6 +78,24 @@ public class Step {
     }
 
     /**
+     * Get full map of ingredients.
+     * @return the underlying map of ingredients
+     */
+    public LinkedHashMap<String,Ingredient> getIngredients() {
+        return this.dblIngredients;
+    }
+
+    /**
+     * Set full map of ingredients.
+     * @param the Ingredients map to replace the current one with
+     * @return the Step object for chaining
+     */
+    public Step setIngredients(LinkedHashMap<String,Ingredient> ingredients) {
+        this.dblIngredients = ingredients;
+        return this;
+    }
+
+    /**
      * The description of this step.
      */
     private String text;
