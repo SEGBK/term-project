@@ -1,7 +1,10 @@
 package librecipe;
 
 import java.net.URL;
+import java.lang.Thread;
 import java.util.HashMap;
+import java.lang.Runnable;
+import java.util.ArrayList;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.BufferedReader;
@@ -9,10 +12,6 @@ import java.util.LinkedHashMap;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import javax.net.ssl.HttpsURLConnection;
-
-import java.lang.Runnable;
-import java.lang.Thread;
-import java.util.ArrayList;
 
 /**
  * Handles the storage and retreival of all recipes.
