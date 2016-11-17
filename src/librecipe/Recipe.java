@@ -23,6 +23,14 @@ public class Recipe extends Saveable {
     }
 
     /**
+     * Creates a new Recipe object from JSON.
+     * @param json a string of JSON to read from
+     */
+    public Recipe(String json) throws JsonParseException, IOException {
+        this.deserialize(json);
+    }
+
+    /**
      * The common name of the recipe.
      */
     private String name;
@@ -48,14 +56,14 @@ public class Recipe extends Saveable {
      * Retrieves the number of preparation steps required.
      * @return the number of preparation steps
      */
-    public int getNumberOfPSteps() { return this.pSteps.size(); }
+    public int numberOfPSteps() { return this.pSteps.size(); }
 
     /**
      * Retrieves preparation step at a given index.
      * @param index the index of the step to be fetched (starts at 0)
      * @return the Step object representing the preparation step
      */
-    public Step getPStep(int index) { return this.pSteps.get(index); }
+    public Step pStep(int index) { return this.pSteps.get(index); }
 
     /**
      * Creates a new iterable to go over the preparation steps.
@@ -79,14 +87,14 @@ public class Recipe extends Saveable {
      * Retrieves the number of cooking steps required.
      * @return the number of cooking steps
      */
-    public int getNumberOfSteps() { return this.steps.size(); }
+    public int numberOfSteps() { return this.steps.size(); }
 
     /**
      * Retrieves a specific cooking step.
      * @param index the index of the step to be fetched (starts at 0)
      * @return the Step object representing the cooking step
      */
-    public Step getStep(int index) { return this.steps.get(index); }
+    public Step step(int index) { return this.steps.get(index); }
     
     /**
      * Creates a new iterable to go over the cooking steps.
@@ -154,7 +162,7 @@ public class Recipe extends Saveable {
      * Retrieves the amount of time required to prepare this recipe.
      * @return the time required for preparation of this recipe
      */
-    public double getPrepTime() {
+    public double prepTime() {
         double time = 0;
 
         // sum up the time lengths of all preparation steps 
@@ -169,7 +177,7 @@ public class Recipe extends Saveable {
      * Retrieves the amount of time required to cook this recipe.
      * @return the time required to cook this recipe
      */
-    public double getCookTime() {
+    public double cookTime() {
         double time = 0;
 
         // sum up the time lengths of all cooking steps 
@@ -184,8 +192,8 @@ public class Recipe extends Saveable {
      * Retrieves the total time required to prepare and cook this recipe.
      * @return the total time required for this recipe
      */
-    public double getTotalTime() {
-        return this.getPrepTime() + this.getCookTime();
+    public double totalTime() {
+        return this.prepTime() + this.cookTime();
     }
 
     /**
@@ -213,7 +221,7 @@ public class Recipe extends Saveable {
      * @param ingredient the name of the ingredient
      * @return the quantity of ingredient required by full recipe
      */
-    public double getQuantityOf(String ingredient) {
+    public double quantityOf(String ingredient) {
         double quantity = 0.0;
 
         // sum up the quantity required by each step
@@ -231,7 +239,7 @@ public class Recipe extends Saveable {
      * @param ingredient the name of the ingredient
      * @return the units of measure being used
      */
-    public String getUnitsOf(String ingredient) {
+    public String unitsOf(String ingredient) {
         for (Step step : this.steps) {
             if (step.getQuantityOf(ingredient) > 0) {
                 return step.getUnitsOf(ingredient);
