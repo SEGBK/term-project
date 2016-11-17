@@ -1,13 +1,18 @@
 package librecipe;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.map.JsonMappingException;
 
 /**
  * Holds the details related to a recipe.
  */
-public class Recipe {
+public class Recipe extends Saveable {
     /**
      * Creates a new empty recipe object.
      */
@@ -246,10 +251,7 @@ public class Recipe {
      * Set full list of prep steps.
      * @return the ArrayList<> of prep steps
      */
-    public void setPSteps(ArrayList<Step> pSteps) {
-        this.pSteps = pSteps;
-        return this;
-    }
+    public void setPSteps(ArrayList<Step> pSteps) { this.pSteps = pSteps; }
 
     /**
      * Get full list of steps.
@@ -261,8 +263,35 @@ public class Recipe {
      * Set full list of steps.
      * @return the ArrayList<> of steps
      */
-    public void setSteps(ArrayList<Step> steps) {
-        this.steps = steps;
+    public void setSteps(ArrayList<Step> steps) { this.steps = steps; }
+
+    /**
+     * Serializes a Recipe object into a string.
+     * @return Recipe in the form of a string (contains unreadable characters)
+     */
+    public String serialize() throws JsonMappingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
+        return mapper.writeValueAsString(this);
+    }
+
+    /**
+     * Deserializes a string into a Recipe object.
+     * @param serialized the original serialized object as a string
+     * @return the Recipe object for chaining
+     */
+    protected Recipe deserialize(String serialized) throws JsonParseException, IOException {
+        // deserialize the object
+        ObjectMapper mapper = new ObjectMapper();
+        Recipe unwrapped = mapper.readValue(serialized, Recipe.class);
+
+        // copy properties over
+        this.setName(unwrapped.getName());
+        this.setServings(unwrapped.getServings());
+        this.setPSteps(unwrapped.getPSteps());
+        this.setSteps(unwrapped.getSteps());
+
+        // return for chaining
         return this;
     }
 }
