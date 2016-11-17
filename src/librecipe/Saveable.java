@@ -21,5 +21,5 @@ public abstract class Saveable {
      * @param serialized the original serialized object as a string
      * @return the Saveable object for chaining
      */
-    protected abstract Saveable deserialize(String serialized) throws JsonParseException, IOException;
+    public abstract Saveable deserialize(String serialized) throws JsonParseException, IOException;
 }

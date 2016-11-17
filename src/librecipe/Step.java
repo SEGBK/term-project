@@ -140,7 +140,7 @@ public class Step extends Saveable {
      * @param serialized the original serialized object as a string
      * @return the Step object for chaining
      */
-    protected Step deserialize(String serialized) throws JsonParseException, IOException {
+    public Step deserialize(String serialized) throws JsonParseException, IOException {
         // deserialize the object
         ObjectMapper mapper = new ObjectMapper();
         Step unwrapped = mapper.readValue(serialized, Step.class);
