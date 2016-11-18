@@ -44,9 +44,15 @@ public class Sample {
         printRecipe(recipe);
 
         System.out.println("---");
-        final String saved = recipe.serialize();
-        Recipe newRecipe = new Recipe(saved);
-        printRecipe(newRecipe);
+        final CookBook book = new CookBook();
+        book.onReady(new Runnable() {
+            public void run() {
+                try {
+                    book.add(recipe);
+                    printRecipe(book.get(recipe.getName()));
+                } catch (Exception ex) { ex.printStackTrace(); }
+            }
+        });
     }
 
     private static void printRecipe(Recipe recipe) {
