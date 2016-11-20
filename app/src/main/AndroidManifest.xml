@@ -18,6 +18,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.NewRecipe" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".activities.Recipe"
+            android:label="@string/title_activity_recipe"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.AddIngredientsStep"
+            android:label="@string/title_activity_add_ingredients_step"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.AddInstructionsStep"
+            android:label="@string/title_activity_add_instructions_step"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
