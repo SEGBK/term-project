@@ -1,0 +1,10 @@
+namespace librecipe;
+
+interface Saveable {
+    depend java.io.IOException;
+    depend org.codehaus.jackson.JsonParseException;
+    depend org.codehaus.jackson.map.JsonMappingException;
+
+    String serialize() throws JsonMappingException, IOException;
+    Saveable deserialize(String serialized) throws JsonParseException, IOException;
+}

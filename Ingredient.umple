@@ -1,0 +1,18 @@
+namespace librecipe;
+
+class Ingredient {
+    depend java.io.IOException;
+    depend org.codehaus.jackson.map.ObjectMapper;
+    depend org.codehaus.jackson.map.SerializationConfig;
+    depend org.codehaus.jackson.JsonParseException;
+    depend org.codehaus.jackson.map.JsonMappingException;
+
+    isA Saveable;
+
+    double quantity;
+    String name;
+    String units;
+
+    String serialize() throws JsonMappingException, IOException {return null;}
+    Ingredient deserialize(String serialized) throws JsonParseException, IOException { return this; }
+}

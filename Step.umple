@@ -1,0 +1,30 @@
+class Step {
+    isA Saveable;
+    double time;
+    //LinkedHashMap<String,Ingredient> dblIngredients;
+    1 step -> * Ingredient ingredients;
+    String text;
+
+    Step addIngredient(String name, double quantity, String units) {
+        this.dblIngredients.put(name, new Ingredient(name, quantity, units));
+        return this;
+    }
+
+    double getQuantityOf(String ingredient) {
+        if (!this.dblIngredients.containsKey(ingredient)) return 0;
+        return this.dblIngredients.get(ingredient).getQuantity();
+    }
+
+    String getUnitsOf(String ingredient) {
+        if (!this.dblIngredients.containsKey(ingredient)) return null;
+        return this.dblIngredients.get(ingredient).getUnits();
+    }
+
+    String serialize() throws JsonMappingException, IOException {
+        return null;
+    }
+
+    Step deserialize(String serialized) throws JsonParseException, IOException {
+        return this;
+    }
+}

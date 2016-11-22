@@ -1,0 +1,159 @@
+namespace librecipe;
+
+class Ingredient {
+    depend java.io.IOException;
+    depend org.codehaus.jackson.map.ObjectMapper;
+    depend org.codehaus.jackson.map.SerializationConfig;
+    depend org.codehaus.jackson.JsonParseException;
+    depend org.codehaus.jackson.map.JsonMappingException;
+
+    isA Saveable;
+
+    double quantity;
+    String name;
+    String units;
+
+    String serialize() throws JsonMappingException, IOException {return null;}
+    Ingredient deserialize(String serialized) throws JsonParseException, IOException { return this; }
+}
+
+class Recipe {
+    depend java.io.IOException;
+    depend java.util.Iterator;
+    depend java.util.ArrayList;
+    depend java.util.PriorityQueue;
+    depend org.codehaus.jackson.map.ObjectMapper;
+    depend org.codehaus.jackson.JsonParseException;
+    depend org.codehaus.jackson.map.SerializationConfig;
+    depend org.codehaus.jackson.map.JsonMappingException;
+
+    isA Saveable;
+
+    String name;
+    1 -> * Step preparationSteps;
+
+    int numberOfPrepSteps() { return this.pSteps.size(); }
+
+    1 -> * Step steps;
+    int numberOfSteps() { return this.steps.size(); }
+
+    Recipe addPrepStep(Step step) {
+        this.pSteps.add(step);
+        return this;
+    }
+
+    Recipe addStep(Step step) {
+        this.steps.add(step);
+        return this;
+    }
+
+    double servings;
+
+    double prepTime() {
+        double time = 0;
+
+        // sum up the time lengths of all preparation steps 
+        for (Step step : this.pSteps) {
+            time += step.getTime();
+        }
+
+        return time;
+    }
+
+    double cookTime() {
+        double time = 0;
+
+        // sum up the time lengths of all cooking steps 
+        for (Step step : this.steps) {
+            time += step.getTime();
+        }
+
+        return time;
+    }
+
+    double totalTime() {
+        return this.prepTime() + this.cookTime();
+    }
+
+    double quantityOf(String ingredient) {
+        double quantity = 0.0;
+
+        // sum up the quantity required by each step
+        for (Step step : this.steps) {
+            quantity += step.getQuantityOf(ingredient);
+        }
+
+        // multiply quantity for one serving by the number
+        // of servings
+        return this.servings * quantity;
+    }
+
+    String unitsOf(String ingredient) {
+        for (Step step : this.steps) {
+            if (step.getQuantityOf(ingredient) > 0) {
+                return step.getUnitsOf(ingredient);
+            }
+        }
+
+        return null;
+    }
+
+    String serialize() throws JsonMappingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
+    }
+
+    Recipe deserialize(String serialized) throws JsonParseException, IOException {
+        // deserialize the object
+        ObjectMapper mapper = new ObjectMapper();
+        Recipe unwrapped = mapper.readValue(serialized, Recipe.class);
+
+        // copy properties over
+        this.setName(unwrapped.getName());
+        this.setServings(unwrapped.getServings());
+        this.setPSteps(unwrapped.getPSteps());
+        this.setSteps(unwrapped.getSteps());
+
+        // return for chaining
+        return this;
+    }
+}
+
+class Saveable {
+    depend java.io.IOException;
+    depend org.codehaus.jackson.JsonParseException;
+    depend org.codehaus.jackson.map.JsonMappingException;
+
+  String serialize() {}
+  Saveable deserialize(String serialized) {}
+}
+
+class Step {
+    isA Saveable;
+    double time;
+  1 step -> * Ingredient ingredients;
+    String text;
+
+    Step addIngredient(String name, double quantity, String units) {
+        this.dblIngredients.put(name, new Ingredient(name, quantity, units));
+        return this;
+    }
+
+    double quantityOf(String ingredient) {
+        if (!this.dblIngredients.containsKey(ingredient)) return 0;
+        return this.dblIngredients.get(ingredient).getQuantity();
+    }
+
+    String unitsOf(String ingredient) {
+        if (!this.dblIngredients.containsKey(ingredient)) return null;
+        return this.dblIngredients.get(ingredient).getUnits();
+    }
+
+    String serialize() throws JsonMappingException, IOException {
+        return null;
+    }
+
+    Step deserialize(String serialized) throws JsonParseException, IOException {
+        return this;
+    }
+}
