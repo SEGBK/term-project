@@ -27,7 +27,7 @@ require('./allrecipes')(query).then(recipes => {
                     let tmp = (text[0].match(/(kg|kilogram|g|gram|pound)(s?)/gi) || []).filter(e => e)
                     if (tmp.length === 1) {
                         units = text[0]
-                        text = text.slice(1).join(' ')
+                        text = text.slice(1)
                     }
 
                     break
@@ -40,6 +40,8 @@ require('./allrecipes')(query).then(recipes => {
                 num = num.split('/')
                 return prev + (num.length === 2 ? parseInt(num[0], 10) / parseInt(num[1], 10) : parseFloat(num.join('')))
             }, 0)
+
+            text = text.join(' ')
 
             if (!text) {
                 console.log([[amount, units], text])
