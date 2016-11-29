@@ -24,7 +24,8 @@ require('./allrecipes')(query).then(recipes => {
                     text = text.substr(i)
                     text = text.split(/\s+/g)
 
-                    if (text[0].match(/(kg|kilogram|g|gram|pound)(s?)/gi)) {
+                    let tmp = (text[0].match(/(kg|kilogram|g|gram|pound)(s?)/gi) || []).filter(e => e)
+                    if (tmp.length === 1) {
                         units = text[0]
                         text = text.slice(1).join(' ')
                     }
@@ -40,6 +41,11 @@ require('./allrecipes')(query).then(recipes => {
                 return prev + (num.length === 2 ? parseInt(num[0], 10) / parseInt(num[1], 10) : parseFloat(num.join('')))
             }, 0)
 
+            if (!text) {
+                console.log([[amount, units], text])
+            }
+
+            console.log('doc: %s', text)
             ingredientClassifier.addDocument(text, String(index))
 
             return [[amount, units], text]
