@@ -6,6 +6,7 @@
 
 const query = process.argv.slice(2).join(' ')
     , LogisticRegressionClassifier = require('natural').LogisticRegressionClassifier
+    , metric = /(kg|kilogram|g|gram|pound|cup|tablespoon|teaspoon|can)(s?)/gi
 
 console.log(' * Searching for "%s" ...', query)
 require('./allrecipes')(query).then(recipes => {
@@ -24,7 +25,7 @@ require('./allrecipes')(query).then(recipes => {
                     text = text.substr(i)
                     text = text.split(/\s+/g)
 
-                    let tmp = (text[0].match(/(kg|kilogram|g|gram|pound)(s?)/gi) || []).filter(e => e)
+                    let tmp = (text[0].match(metric) || []).filter(e => e)
                     if (tmp.length === 1) {
                         units = text[0]
                         text = text.slice(1)
@@ -65,7 +66,7 @@ require('./allrecipes')(query).then(recipes => {
             }
 	    console.log(text)
             ingredientClassifier.getClassifications(text).forEach(classification => {
-		console.log("%s at weight %s", recipe.ingredients[+classification.label], classification.value)
+        		console.log('%s => %s', recipe.ingredients[+classification.label][1], classification.value)
                 if (classification.value > 0.4) {
                     let ingredient = JSON.parse(JSON.stringify(recipe.ingredients[+classification.label]))
                     if (map[classification.label]) ingredient[0][0] = 0
@@ -76,8 +77,9 @@ require('./allrecipes')(query).then(recipes => {
 
             return step
         })
-
         
+    delete recipe.ingredients
+
 	return recipe
     }), null, 2))
 }, console.log)
