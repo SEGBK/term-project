@@ -55,9 +55,8 @@ require('./allrecipes')(query).then(recipes => {
                 ingredients: [],
                 text: text
             }
-
             ingredientClassifier.getClassifications(text).forEach(classification => {
-                if (classification.value > 0.5) {
+                if (classification.value > 0.4) {
                     let ingredient = JSON.parse(JSON.stringify(recipe.ingredients[+classification.label]))
                     if (map[classification.label]) ingredient[0][0] = 0
                     map[classification.label] = true
@@ -68,6 +67,7 @@ require('./allrecipes')(query).then(recipes => {
             return step
         })
 
-        return recipe
+        
+	return recipe
     }), null, 2))
 }, console.log)
