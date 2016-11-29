@@ -52,7 +52,10 @@ module.exports = query => new Promise((resolve, reject) => {
                                     }
 
                                 // pull all ingredients
-                                $('[class*="list-ingredients"] li span').each((_, span) => clean($(span).text()) && obj.ingredients.push($(span).text()))
+                                $('[class*="list-ingredients"] li span').each((_, span) => {
+                                  let text = $(span).text()
+                                  if (clean(text)) obj.ingredients.push(text)
+                                })
 
                                 // add all steps
                                 $('[itemprop="recipeInstructions"] .step span').each((_, span) => clean($(span).text()) && obj.steps.push($(span).text()))
