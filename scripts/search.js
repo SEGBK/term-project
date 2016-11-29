@@ -61,7 +61,9 @@ require('./allrecipes')(query).then(recipes => {
                 ingredients: [],
                 text: text
             }
+	    console.log(text)
             ingredientClassifier.getClassifications(text).forEach(classification => {
+		console.log("%s at weight %s", recipe.ingredients[+classification.label], classification.value)
                 if (classification.value > 0.4) {
                     let ingredient = JSON.parse(JSON.stringify(recipe.ingredients[+classification.label]))
                     if (map[classification.label]) ingredient[0][0] = 0
