@@ -33,7 +33,7 @@ module.exports = query => new Promise((resolve, reject) => {
                                 reject(err || ('Something went wrong.' + (res ? ' (code: ' + res.statusCode + ')' : '')))
                             } else {
                                 const $ = cheerio.load(page)
-                                    , clean = text => text && text !== 'ADVERTISEMENT'
+                                    , clean = text => text && text !== 'ADVERTISEMENT' && text !== 'Add all ingredients to list'
                                     , convert = {
                                         'm': m => m
                                     }
@@ -53,8 +53,8 @@ module.exports = query => new Promise((resolve, reject) => {
 
                                 // pull all ingredients
                                 $('[class*="list-ingredients"] li span').each((_, span) => {
-                                  let text = $(span).text()
-                                  if (clean(text)) obj.ingredients.push(text)
+                                  let text = $(span).text().replace(/\s+/g, ' ')
+                                  if (clean(text)) obj.ingredients.push(text.replace(/\(.*\)/g, '').replace(/[^\w\s/.]/g, '').trim())
                                 })
 
                                 // add all steps
