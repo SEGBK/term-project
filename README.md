@@ -1,4 +1,4 @@
-# libRecipe
+# libRecipe [![Build Status](https://travis-ci.org/SEGBK/term-project.svg?branch=test)](https://travis-ci.org/SEGBK/term-project)
 
 Library for term project.
 
