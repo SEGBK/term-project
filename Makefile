@@ -17,7 +17,7 @@ run: $(JAR_FILE)
 	java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
 
 docs: .PHONY
-	javadoc -d docs src/librecipe/*.java
+	javadoc -cp "$(CLASSPATH)" -d docs src/librecipe/*.java
 
 clean:
 	rm -f $(JAR_FILE) src/librecipe/*.class test/*.class test/util/*.class
