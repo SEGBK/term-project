@@ -87,9 +87,10 @@ public class CookBook {
     }
 
     /**
-     * Retrieves a saved Saveable object.
+     * Retrieves a saved Recipe object.
      * @param name the name of a Recipe
      * @throws Exception if JSON deserialization fails
+     * @return the Recipe object being retrieved
      */
     public Recipe get(String name) throws Exception {
         return new Recipe(this.request("GET", "recipes/" + map.get(name) + ".json", null));
@@ -120,12 +121,14 @@ public class CookBook {
 
     /**
      * Add an event listener for when CookBook errors out.
+     * @param run an EventHandler object to subscribe to the error event
      */
     public void onError(EventHandler run) { this.error.add(run); }
     private ArrayList<EventHandler> error;
 
     /**
      * Add an event listener for when CookBook is ready.
+     * @param run an EventHandler object to subscribe to the ready event
      */
     public void onReady(Runnable run) { this.ready.add(run); }
     private ArrayList<Runnable> ready;

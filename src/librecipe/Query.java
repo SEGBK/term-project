@@ -7,11 +7,11 @@ import java.util.ArrayList;
  * matching recipes to it.
  */
 public class Query {
-    private ArrayList<Entry> query; 
+    private ArrayList<Entry> query;
 
     /**
-     * Parses a query string into a series of
-     * requirements.
+     * Parses a query string into a series of requirements.
+     * @param query the string query as given by the user
      */
     public Query(String query) {
         this.query = new ArrayList<Entry>();

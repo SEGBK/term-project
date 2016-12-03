@@ -21,6 +21,8 @@ public class Step extends Saveable {
     /**
      * Creates a new step object from JSON.
      * @param serialized the JSON string to deserialize from
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      */
     public Step(String serialized) throws JsonParseException, IOException {
         this.deserialize(serialized);
@@ -100,7 +102,7 @@ public class Step extends Saveable {
 
     /**
      * Set full map of ingredients.
-     * @param the Ingredients map to replace the current one with
+     * @param ingredients the Ingredients map to replace the current one with
      * @return the Step object for chaining
      */
     public Step setIngredients(LinkedHashMap<String,Ingredient> ingredients) {
@@ -128,6 +130,8 @@ public class Step extends Saveable {
 
     /**
      * Serializes a Saveable object into a string.
+     * @throws JsonMappingException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return Step in the form of a string (contains unreadable characters)
      */
     public String serialize() throws JsonMappingException, IOException {
@@ -138,6 +142,8 @@ public class Step extends Saveable {
     /**
      * Deserializes a string into a Step object.
      * @param serialized the original serialized object as a string
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return the Step object for chaining
      */
     public Step deserialize(String serialized) throws JsonParseException, IOException {

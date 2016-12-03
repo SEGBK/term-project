@@ -15,6 +15,9 @@ public class Ingredient extends Saveable implements Comparable<Ingredient> {
 
     /**
      * Creates a new Ingredient object from values.
+     * @param name the string name of the ingredient
+     * @param quantity the quantity of this ingredient in the step
+     * @param units the units in which the quantity is measured
      */
     public Ingredient(String name, double quantity, String units) {
         this.name = name;
@@ -24,7 +27,9 @@ public class Ingredient extends Saveable implements Comparable<Ingredient> {
 
     /**
      * Creates a new Ingredient object from JSON.
-     * @param json the json string to deserialize from 
+     * @param json the json string to deserialize from
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      */
     public Ingredient(String json) throws JsonParseException, IOException {
         this.deserialize(json);
@@ -65,6 +70,8 @@ public class Ingredient extends Saveable implements Comparable<Ingredient> {
 
     /**
      * Serializes a Saveable object into a string.
+     * @throws JsonMappingException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return Ingredient in the form of a string (contains unreadable characters)
      */
     public String serialize() throws JsonMappingException, IOException {
@@ -75,6 +82,8 @@ public class Ingredient extends Saveable implements Comparable<Ingredient> {
     /**
      * Deserializes a string into a Ingredient object.
      * @param serialized the original serialized object as a string
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return the Ingredient object for chaining
      */
     public Ingredient deserialize(String serialized) throws JsonParseException, IOException {

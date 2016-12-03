@@ -12,6 +12,8 @@ import org.codehaus.jackson.map.JsonMappingException;
 public abstract class Saveable {
     /**
      * Serializes a Saveable object into a string.
+     * @throws JsonMappingException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return Saveable in the form of a string (contains unreadable characters)
      */
     public abstract String serialize() throws JsonMappingException, IOException;
@@ -19,6 +21,8 @@ public abstract class Saveable {
     /**
      * Deserializes a string into a Saveable object.
      * @param serialized the original serialized object as a string
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return the Saveable object for chaining
      */
     public abstract Saveable deserialize(String serialized) throws JsonParseException, IOException;

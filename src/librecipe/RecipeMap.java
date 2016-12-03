@@ -21,7 +21,9 @@ public class RecipeMap extends Saveable {
 
     /**
      * Creates a new RecipeMap object from JSON.
-     * @throws Exception if JSON deserialization fails
+     * @param json the string JSON object
+     * @throws JsonParseException if JSON deserialization fails
+     * @throws IOException if JSON deserialization fails
      */
     public RecipeMap(String json) throws JsonParseException, IOException {
         this.deserialize(json);
@@ -37,12 +39,14 @@ public class RecipeMap extends Saveable {
     /**
      * Map a recipe name to recipe ID.
      * @param key the name of a recipe
-     * @param the ID of the recipe
+     * @param value the ID of the recipe
      */
     public void put(String key, String value) { this.map.put(key, value); }
 
     /**
      * Serializes a RecipeMap object into a string.
+     * @throws JsonMappingException if JSON serialization fails
+     * @throws IOException if JSON serialization fails
      * @return RecipeMap in the form of a string (contains unreadable characters)
      */
     public String serialize() throws JsonMappingException, IOException {
@@ -53,6 +57,8 @@ public class RecipeMap extends Saveable {
     /**
      * Deserializes a string into a RecipeMap object.
      * @param serialized the original serialized object as a string
+     * @throws JsonParseException if JSON deserialization fails
+     * @throws IOException if JSON deserialization fails
      * @return the RecipeMap object for chaining
      */
     public RecipeMap deserialize(String serialized) throws JsonParseException, IOException {

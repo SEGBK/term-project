@@ -25,6 +25,8 @@ public class Recipe extends Saveable {
     /**
      * Creates a new Recipe object from JSON.
      * @param json a string of JSON to read from
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      */
     public Recipe(String json) throws JsonParseException, IOException {
         this.deserialize(json);
@@ -43,6 +45,7 @@ public class Recipe extends Saveable {
 
     /**
      * Sets the common name of the recipe.
+     * @param name the name to set for this recipe
      * @return the Recipe object for chaining
      */
     public Recipe setName(String name) { this.name = name; return this; }
@@ -279,30 +282,32 @@ public class Recipe extends Saveable {
 
     /**
      * Get full list of prep steps.
-     * @return the ArrayList<> of prep steps
+     * @return the list of prep steps
      */
     public ArrayList<Step> getPSteps() { return this.pSteps; }
 
     /**
      * Set full list of prep steps.
-     * @return the ArrayList<> of prep steps
+     * @param pSteps the list of steps to set to
      */
     public void setPSteps(ArrayList<Step> pSteps) { this.pSteps = pSteps; }
 
     /**
      * Get full list of steps.
-     * @return the ArrayList<> of prep steps
+     * @return the list of prep steps
      */
     public ArrayList<Step> getSteps() { return this.steps; }
 
     /**
      * Set full list of steps.
-     * @return the ArrayList<> of steps
+     * @param steps the list of steps to set to
      */
     public void setSteps(ArrayList<Step> steps) { this.steps = steps; }
 
     /**
      * Serializes a Recipe object into a string.
+     * @throws JsonMappingException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return Recipe in the form of a string (contains unreadable characters)
      */
     public String serialize() throws JsonMappingException, IOException {
@@ -313,6 +318,8 @@ public class Recipe extends Saveable {
     /**
      * Deserializes a string into a Recipe object.
      * @param serialized the original serialized object as a string
+     * @throws JsonParseException if any errors occur in deserialization
+     * @throws IOException if any errors occur in deserialization
      * @return the Recipe object for chaining
      */
     public Recipe deserialize(String serialized) throws JsonParseException, IOException {
