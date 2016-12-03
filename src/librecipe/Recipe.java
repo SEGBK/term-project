@@ -141,6 +141,34 @@ public class Recipe extends Saveable {
     }
 
     /**
+     * Deletes the preparation step at a given index.
+     * @param index the index of the preparation step to delete
+     * @return the Recipe object for chaining
+     */
+    public Recipe removePStep(int index) { this.pSteps.remove(index); return this; }
+
+    /**
+     * Deletes a given preparation step.
+     * @param step the preparation step to delete
+     * @return the Recipe object for chaining
+     */
+    public Recipe removePStep(Step step) { this.pSteps.remove(step); return this; }
+
+    /**
+     * Deletes the step at a given index.
+     * @param index the index of the step to delete
+     * @return the Recipe object for chaining
+     */
+    public Recipe removeStep(int index) { this.steps.remove(index); return this; }
+
+    /**
+     * Deletes a given step.
+     * @param step the step to delete
+     * @return the Recipe object for chaining
+     */
+    public Recipe removeStep(Step step) { this.steps.remove(step); return this; }
+
+    /**
      * The number of servings for which to return quantities.
      */
     private double servings;
