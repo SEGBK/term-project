@@ -4,7 +4,7 @@
 CLASSPATH	= .:$(PWD)/lib/jackson-all-1.9.0.jar
 JAR_FILE	= librecipe.jar
 
-all: run
+all: $(JARFILE)
 
 build:
 	cd src && javac -cp "$(CLASSPATH)" librecipe/*.java

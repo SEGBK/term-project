@@ -69,7 +69,6 @@ public class Ingredient extends Saveable implements Comparable<Ingredient> {
      */
     public String serialize() throws JsonMappingException, IOException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationConfig.Feature.INDENT_OUTPUT);
         return mapper.writeValueAsString(this);
     }
 
@@ -78,7 +77,7 @@ public class Ingredient extends Saveable implements Comparable<Ingredient> {
      * @param serialized the original serialized object as a string
      * @return the Ingredient object for chaining
      */
-    protected Ingredient deserialize(String serialized) throws JsonParseException, IOException {
+    public Ingredient deserialize(String serialized) throws JsonParseException, IOException {
         // deserialize the object
         ObjectMapper mapper = new ObjectMapper();
         Ingredient unwrapped = mapper.readValue(serialized, Ingredient.class);
