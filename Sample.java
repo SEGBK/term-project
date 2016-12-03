@@ -3,6 +3,7 @@
  */
 
 import librecipe.*;
+import librecipe.query.*;
 
 import org.codehaus.jackson.*;
 import org.codehaus.jackson.map.*;
@@ -43,7 +44,11 @@ public class Sample {
 
         printRecipe(recipe);
 
-        System.out.println("---");
+        // test query
+        final String query = "((name has cake))";
+        System.out.format("query: %s => %s\n", query, (new Query(query)).matches(recipe));
+
+        /*System.out.println("---");
         final CookBook book = new CookBook();
         book.onReady(new Runnable() {
             public void run() {
@@ -52,7 +57,7 @@ public class Sample {
                     printRecipe(book.get(recipe.getName()));
                 } catch (Exception ex) { ex.printStackTrace(); }
             }
-        });
+        });*/
     }
 
     private static void printRecipe(Recipe recipe) {

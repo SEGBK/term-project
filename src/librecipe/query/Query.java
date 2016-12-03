@@ -1,6 +1,10 @@
-package librecipe;
+package librecipe.query;
 
 import java.util.ArrayList;
+
+import librecipe.Step;
+import librecipe.Recipe;
+import librecipe.Ingredient;
 
 /**
  * An object to manage a given query and handle
@@ -108,47 +112,12 @@ public class Query {
         return -1;
     }
 
-    private class Entry {
-        private int joiner;
-        private ArrayList<Entry> condition;
-        private QueryObject query;
-
-        public Entry(int joiner) { this.joiner = joiner; }
-        public Entry(ArrayList<Entry> condition) { this.condition = condition; }
-        public Entry(QueryObject query) { this.query = query; }
-
-        public int getJoiner() { return this.joiner; }
-        public ArrayList<Entry> getCondition() { return this.condition; }
-        public QueryObject getQuery() { return this.query; }
-
-        public char type() {
-            return this.condition != null ? 'c' : (this.query != null ? 'q' : 'j');
-        }
-    }
-
-    private class QueryObject {
-        private String property, verb, query;
-
-        public QueryObject(String query) {
-            String[] q = query.split(" ");
-
-            this.property = q[0];
-            this.verb = q[1];
-
-            this.query = "";
-            for (int i = 2; i < q.length; i += 1) {
-                this.query += q[i] + " ";
-            }
-
-            this.query = this.query.substring(0, this.query.length() - 1);
-        }
-
-        public String getProperty() { return this.property; }
-        public String getVerb() { return this.verb; }
-        public String getQuery() { return this.query; }
-
-        public String toString() {
-            return "query(" + this.property + "," + this.verb + "," + this.query + ")";
-        }
+    /**
+     * Execute query over given recipe object.
+     * @param recipe the Recipe object to test against
+     * @return true if query matches object
+     */
+    public boolean matches(Recipe recipe) {
+        return false;
     }
 }

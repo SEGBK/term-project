@@ -1,5 +1,6 @@
 package librecipe;
 
+import librecipe.query.Query;
 import java.net.URL;
 import java.lang.Thread;
 import java.util.HashMap;
