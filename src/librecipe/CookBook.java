@@ -97,20 +97,7 @@ public class CookBook {
         return new Recipe(this.request("GET", "recipes/" + map.get(name) + ".json", null));
     }
 
-    /**
-     * Executes a search and returns a list of Recipe objects.
-     * @param query a properly structured query String
-     * @return a list of Recipe objects
-     */
-    public ArrayList<Recipe> search(String query) throws Exception {
-        return this.search(new Query(query));
-    }
-
-    /**
-     * Executes a search and returns a list of Recipe objects.
-     * @param query a properly structured query String
-     * @return a list of Recipe objects
-     */
+    /*
     public ArrayList<Recipe> search(Query query) throws Exception {
         ArrayList<Recipe> results = new ArrayList<Recipe>();
 
@@ -120,6 +107,92 @@ public class CookBook {
         }
 
         return results;
+    }*/
+
+    /**
+     * Executes a search and calls ResultsHandler object on complete.
+     * @param query the query as a String
+     * @param eventHandler the ResultsHandler object to call
+     * @return the CookBook object for chaining
+     */
+    public CookBook search(String query, ResultsHandler eventHandler) {
+        return this.search(new Query(query), eventHandler);
+    }
+
+    /**
+     * Maximum number of parallel jobs.
+     */
+    private final int MAX_JOBS = Runtime.getRuntime().availableProcessors() + 1;
+
+    /**
+     * Executes a search and calls ResultsHandler object on complete.
+     * @param query the Query object containing all conditions
+     * @param eventHandler the ResultsHandler object to call
+     * @return the CookBook object for chaining
+     */
+    public CookBook search(Query query, ResultsHandler eventHandler) {
+        final CookBook that = this;
+
+        // general results list
+        final ArrayList<Recipe> results = new ArrayList<Recipe>();
+        
+        // check when threads are done
+        final Counter counter = new Counter();
+        final Runnable end = new Runnable() {
+            public void run() {
+                counter.next();
+                System.out.print(""); // small delay
+                if (counter.count() == MAX_JOBS) eventHandler.onResults(results);
+            }
+        };
+
+        // jobs per thread count
+        final String[] recipes = new String[this.map.size()];
+        for (int i = 0; i < recipes.length; i ++) recipes[i] = this.map.getKeys().get(i);
+        final int RES_PER_JOB = (int)( recipes.length / MAX_JOBS );
+
+        if (RES_PER_JOB == 0) {
+            new Thread() {
+                public void run() {
+                    for (String name : that.map) {
+                        try {
+                            Recipe recipe = that.get(name);
+                            if (query.matches(recipe)) results.add(recipe);
+                        }  catch (Exception e) { /**/ }
+                    }
+                
+                    eventHandler.onResults(results);
+                }
+            }.start();
+        } else {
+            // create the jobs
+            for (int i = 0; i < MAX_JOBS; i ++) {
+                int job = i + 1;
+                final int a = (job - 1) * RES_PER_JOB, b = (job * RES_PER_JOB) - 1;
+
+                new Thread() {
+                    public void run() {
+                        for (int j = a; j <= b; j ++) {
+                            try {
+                                Recipe recipe = that.get(recipes[j]);
+                                if (query.matches(recipe)) results.add(recipe);
+                            } catch (Exception ex) { /**/ }
+                        }
+
+                        end.run();
+                    }
+                }.start();
+            }
+        }
+
+        // allow chaining
+        return this;
+    }
+
+    private class Counter {
+        private int i = 0;
+        public void next() { this.i ++; }
+        public int count() { return this.i; }
     }
 
     /**

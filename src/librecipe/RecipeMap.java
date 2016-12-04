@@ -1,22 +1,30 @@
 package librecipe;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.io.IOException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.SerializationConfig;
 import org.codehaus.jackson.map.JsonMappingException;
 
-public class RecipeMap extends Saveable {
-    private LinkedHashMap<String,String> map;
-    public LinkedHashMap<String,String> getMap() { return map; }
-    public void setMap(LinkedHashMap<String,String> map) { this.map = map; }
+public class RecipeMap extends Saveable implements Iterable<String> {
+    private ArrayList<String> keys, values;
+
+    public ArrayList<String> getKeys() { return this.keys; }
+    public void setKeys(ArrayList<String> keys) { this.keys = keys; }
+
+    public ArrayList<String> getValues() { return this.values; }
+    public void setValues(ArrayList<String> values) { this.values = values; }
+
+    public int size() { return this.keys.size(); }
 
     /**
      * Creates a new empty RecipeMap object.
      */
     public RecipeMap() {
-        this.map = new LinkedHashMap<>();
+        this.keys = new ArrayList<String>();
+        this.values = new ArrayList<String>();
     }
 
     /**
@@ -34,14 +42,24 @@ public class RecipeMap extends Saveable {
      * @param key the name of a recipe
      * @return the ID of the recipe
      */
-    public String get(String key) { return this.map.get(key); }
+    public String get(String key) {
+        return this.values.get( this.keys.indexOf(key) );
+    }
 
     /**
      * Map a recipe name to recipe ID.
      * @param key the name of a recipe
      * @param value the ID of the recipe
      */
-    public void put(String key, String value) { this.map.put(key, value); }
+    public void put(String key, String value) {
+        this.keys.add(key);
+        this.values.add(value);
+    }
+
+    /**
+     * Creates a new iterator to go through all keys.
+     */
+    public Iterator<String> iterator() { return this.keys.iterator(); }
 
     /**
      * Serializes a RecipeMap object into a string.
@@ -65,7 +83,10 @@ public class RecipeMap extends Saveable {
         // deserialize the object
         ObjectMapper mapper = new ObjectMapper();
         RecipeMap unwrapped = mapper.readValue(serialized, RecipeMap.class);
-        this.setMap(unwrapped.getMap());
+
+        // copy over data
+        this.setKeys( unwrapped.getKeys() );
+        this.setValues( unwrapped.getValues() );
 
         // return for chaining
         return this;
