@@ -4,20 +4,28 @@ package librecipe.query;
  * Abstraction representing a query verb.
  */
 abstract class Verb {
-    private String verb;
+    private String[] verbs;
 
     /**
      * Creates a new Verb object with the given verb.
-     * @param verb the String verb of the Verb
+     * @param verbs the list of verb aliases
      */
-    public Verb(String verb) {
-        this.verb = verb;
+    public Verb(String[] verbs) {
+        this.verbs = verbs;
     }
 
     /**
-     * @return the string verb of this Verb object
+     * Matches a given verb against this Verb object.
+     * @param verb a single String verb
+     * @return true if the given string is an alias for this verb
      */
-    public String toString() { return verb; }
+    public boolean is(String verb) {
+        for (String v : this.verbs) {
+            if (v.equalsIgnoreCase(verb)) return true;
+        }
+
+        return false;
+    }
 
     /**
      * Evaluates verb test on property value.

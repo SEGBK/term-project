@@ -10,14 +10,34 @@ class QueryObject {
      * List of verbs for querying.
      */
     private static Verb[] Verbs = {
-        new Verb("has") {
+        new Verb(new String[] {"has"}) {
             public boolean test(String propertyValue, String query) {
                 return propertyValue.toLowerCase().indexOf(query.toLowerCase()) > -1;
             }
         },
-        new Verb("is") {
+        new Verb(new String[] {"is", "=", "=="}) {
             public boolean test(String propertyValue, String query) {
                 return propertyValue.equalsIgnoreCase(query);
+            }
+        },
+        new Verb(new String[] {">", "gt"}) {
+            public boolean test(String propertyValue, String query) {
+                return Double.parseDouble(propertyValue) > Double.parseDouble(query);
+            }
+        },
+        new Verb(new String[] {">=", "gte"}) {
+            public boolean test(String propertyValue, String query) {
+                return Double.parseDouble(propertyValue) >= Double.parseDouble(query);
+            }
+        },
+        new Verb(new String[] {"<", "lt"}) {
+            public boolean test(String propertyValue, String query) {
+                return Double.parseDouble(propertyValue) < Double.parseDouble(query);
+            }
+        },
+        new Verb(new String[] {"<=", "lte"}) {
+            public boolean test(String propertyValue, String query) {
+                return Double.parseDouble(propertyValue) <= Double.parseDouble(query);
             }
         }
     };
@@ -29,12 +49,12 @@ class QueryObject {
         String verb = q[1];
 
         for (int i = 0; this.verb == null && i < QueryObject.Verbs.length; i ++) {
-            if (QueryObject.Verbs[i].toString().equalsIgnoreCase(verb)) {
+            if (QueryObject.Verbs[i].is(verb)) {
                 this.verb = QueryObject.Verbs[i];
             }
         }
 
-        if (this.verb == null) throw new IllegalArgumentException("the verb '" + this.verb + "' is not supported.");
+        if (this.verb == null) throw new IllegalArgumentException("the verb '" + verb + "' is not supported.");
 
         this.query = "";
         for (int i = 2; i < q.length; i += 1) {
