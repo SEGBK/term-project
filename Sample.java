@@ -13,6 +13,7 @@ public class Sample {
         Recipe recipe = new Recipe();
 
         recipe.setName("Cupcakes");
+        recipe.setType("desert");
 
         for (String step : new String[] {
             "Prep things.",
@@ -45,8 +46,9 @@ public class Sample {
         printRecipe(recipe);
 
         // test query
-        final String query = "((name has cake))";
-        System.out.format("query: %s => %s\n", query, (new Query(query)).matches(recipe));
+        final String query = "(((name has cake)) AND (prepTime <= 10))";
+        System.out.format("\n\nquery: %s => \n\n", query);
+        System.out.format("\n%s\n", (new Query(query)).matches(recipe));
 
         /*System.out.println("---");
         final CookBook book = new CookBook();
