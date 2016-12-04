@@ -31,7 +31,7 @@ public class Query {
 
     /**
      * Parse a given expression into a list of conditions
-     * and joiners.
+     * and conjunctions.
      */
     private ArrayList<Entry> parse(String string) {
         ArrayList<Entry> query = new ArrayList<Entry>();
@@ -95,8 +95,17 @@ public class Query {
         return -1;
     }
 
-    private static String[] joiners = {
-        "AND", "OR"
+    private static Conjunction[] conjunctions = {
+        new Conjunction("AND") {
+            public boolean test(Expression left, Expression right) {
+                return left.eval() && right.eval();
+            }
+        },
+        new Conjunction("OR") {
+            public boolean test(Expression left, Expression right) {
+                return left.eval() || right.eval();
+            }
+        }
     };
 
     /**
@@ -105,8 +114,8 @@ public class Query {
      * @return joiner id
      */
     public int toJoiner(String name) {
-        for (int i = 0; i < this.joiners.length; i ++) {
-            if (this.joiners[i].equalsIgnoreCase(name)) return i;
+        for (int i = 0; i < this.conjunctions.length; i ++) {
+            if (this.conjunctions[i].getName().equalsIgnoreCase(name)) return i;
         }
 
         return -1;
