@@ -17,14 +17,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import io.github.segbk.termproject.R;
+import io.github.segbk.termproject.adapters.IngredientAdapter;
+import io.github.segbk.termproject.models.Ingredient;
 
 public class AddIngredientsStep extends AppCompatActivity {
 
     final Context context = this;
-
+    private AlertDialog d;
+    private ArrayList<Ingredient> ingredients;
+    private ListView ingredient_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +42,8 @@ public class AddIngredientsStep extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Ingredients");
-
+        ingredients = new ArrayList<>();
+        ingredient_list = (ListView)findViewById(R.id.ingredient_list);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,20 +58,27 @@ public class AddIngredientsStep extends AppCompatActivity {
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                // sign in the user ...
+                                addIngredient();
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                             }
                         });
-                AlertDialog d = builder.create();
+                d = builder.create();
                 String[] units = {"Grams", "Cups", "Tsp", "Tbsp", "Litre", "Ml"};
                 d.show();
                 ((Spinner)d.findViewById(R.id.unit_spinner)).setAdapter(new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, units));
-
             }
         });
+    }
+
+    public void addIngredient(){
+        EditText field_ingredient = (EditText) d.findViewById(R.id.field_ingredient);
+        EditText field_quantity = (EditText) d.findViewById(R.id.field_quantity);
+        Spinner unit_spinner = (Spinner)d.findViewById(R.id.unit_spinner);
+        ingredients.add(new Ingredient(field_ingredient.getText().toString(), field_quantity.getText().toString() + unit_spinner.getSelectedItem().toString()));
+        ingredient_list.setAdapter(new IngredientAdapter(context, 0, ingredients));
     }
 
     @Override

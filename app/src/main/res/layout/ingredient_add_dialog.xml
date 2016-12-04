@@ -11,7 +11,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingredient" />
+            android:hint="Ingredient"
+            android:id="@+id/field_ingredient" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
@@ -28,7 +29,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Quantity" />
+                android:hint="Quantity"
+                android:id="@+id/field_quantity" />
         </android.support.design.widget.TextInputLayout>
 
         <Spinner
