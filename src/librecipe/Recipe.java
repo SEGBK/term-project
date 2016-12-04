@@ -336,4 +336,18 @@ public class Recipe extends Saveable {
         // return for chaining
         return this;
     }
+
+    /**
+     * Grabs the value of a property given the name.
+     * @param name the property who's value to fetch
+     * @return the value of the specified property 
+     */
+    public String getProperty(String name) {
+        switch (name) {
+            case "name": return this.getName();
+            case "type": return "dinner";
+
+            default: throw new IllegalArgumentException("No such property: " + name);
+        }
+    }
 }
