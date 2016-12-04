@@ -51,6 +51,24 @@ public class Recipe extends Saveable {
     public Recipe setName(String name) { this.name = name; return this; }
 
     /**
+     * The type of the recipe.
+     */
+    private String type;
+
+    /**
+     * Retrieves the type of the recipe.
+     * @return the type as a string
+     */
+    public String getType() { return this.type; }
+
+    /**
+     * Sets the type of the recipe.
+     * @param type the type to set for this recipe
+     * @return the Recipe object for chaining
+     */
+    public Recipe setType(String type) { this.type = type; return this; }
+
+    /**
      * A list of preparation steps to follow when cooking the recipe.
      */
     private ArrayList<Step> pSteps;
@@ -345,7 +363,10 @@ public class Recipe extends Saveable {
     public String getProperty(String name) {
         switch (name) {
             case "name": return this.getName();
-            case "type": return "dinner";
+            case "type": return this.getType();
+            case "prepTime": return ((Double)this.prepTime()).toString();
+            case "cookTime": return ((Double)this.cookTime()).toString();
+            case "time": return ((Double)this.totalTime()).toString();
 
             default: throw new IllegalArgumentException("No such property: " + name);
         }
