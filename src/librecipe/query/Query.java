@@ -95,7 +95,7 @@ public class Query {
         return -1;
     }
 
-    private static Conjunction[] conjunctions = {
+    private final Conjunction[] conjunctions = {
         new Conjunction("AND") {
             public boolean test(Expression left, Expression right) {
                 return left.eval() && right.eval();
@@ -127,6 +127,47 @@ public class Query {
      * @return true if query matches object
      */
     public boolean matches(Recipe recipe) {
-        return false;
+        return this.matches(this.query, recipe);
+    }
+
+    /**
+     * Converts a boolean value into an Expression object.
+     * @return an Expression created from a final boolean
+     */
+    private Expression exp(final boolean state) {
+        return new Expression() {
+            public boolean eval() { return state; }
+        };
+    }
+
+    /**
+     * Execute list of query entries over given recipe object.
+     * @param entries the list of query entries
+     * @param recipe the Recipe object to test against
+     * @return true if query matches object
+     */
+    public boolean matches(ArrayList<Entry> entries, Recipe recipe) {
+        boolean state = false;
+        Conjunction conj = this.conjunctions[1];
+
+        for (int i = 0; i < entries.size(); i ++) {
+            final Entry e = entries.get(i);
+
+            switch (e.type()) {
+                case 'c':
+                state = conj.test(this.exp(state), this.exp(this.matches(e.getCondition(), recipe)));
+                break;
+
+                case 'q':
+                state = conj.test(this.exp(state), e.getQuery().getQuery(recipe));
+                break;
+
+                default:
+                conj = this.conjunctions[e.getJoiner()];
+                break;
+            }
+        }
+
+        return state;
     }
 }
