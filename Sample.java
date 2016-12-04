@@ -46,20 +46,23 @@ public class Sample {
         printRecipe(recipe);
 
         // test query
-        final String query = "(((name has cake)) AND (prepTime <= 10))";
-        System.out.format("\n\nquery: %s => \n\n", query);
-        System.out.format("\n%s\n", (new Query(query)).matches(recipe));
+        //final String query = "(((name has cake)) AND (prepTime <= 10))";
+        //System.out.format("\nquery: %s => %s\n", query, (new Query(query)).matches(recipe));
 
-        /*System.out.println("---");
+        System.out.println("---");
         final CookBook book = new CookBook();
         book.onReady(new Runnable() {
             public void run() {
                 try {
-                    book.add(recipe);
-                    printRecipe(book.get(recipe.getName()));
+                    //book.add(recipe);
+                    //printRecipe(book.get(recipe.getName()));
+
+                    for (Recipe r : book.search("(((name has cake)) AND (prepTime <= 10))")) {
+                        printRecipe(r);
+                    }
                 } catch (Exception ex) { ex.printStackTrace(); }
             }
-        });*/
+        });
     }
 
     private static void printRecipe(Recipe recipe) {

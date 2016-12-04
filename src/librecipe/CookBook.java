@@ -98,6 +98,31 @@ public class CookBook {
     }
 
     /**
+     * Executes a search and returns a list of Recipe objects.
+     * @param query a properly structured query String
+     * @return a list of Recipe objects
+     */
+    public ArrayList<Recipe> search(String query) throws Exception {
+        return this.search(new Query(query));
+    }
+
+    /**
+     * Executes a search and returns a list of Recipe objects.
+     * @param query a properly structured query String
+     * @return a list of Recipe objects
+     */
+    public ArrayList<Recipe> search(Query query) throws Exception {
+        ArrayList<Recipe> results = new ArrayList<Recipe>();
+
+        for (String name : this.map.getMap().keySet()) {
+            Recipe recipe = this.get(name);
+            if (query.matches(recipe)) results.add(recipe);
+        }
+
+        return results;
+    }
+
+    /**
      * Fetch all saved recipes.
      * @throws Exception if JSON deserialization fails
      */
