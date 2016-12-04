@@ -14,7 +14,7 @@ $(JAR_FILE): build
 
 run: $(JAR_FILE)
 	javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample.java
-	java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
+	time java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
 
 docs: .PHONY
 	javadoc -cp "$(CLASSPATH)" -d docs src/librecipe/*.java src/librecipe/query/*.java
