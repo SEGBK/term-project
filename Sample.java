@@ -2,6 +2,8 @@
  * An example to demonstrate recipes.
  */
 
+import java.util.ArrayList;
+
 import librecipe.*;
 import librecipe.query.*;
 
@@ -54,12 +56,15 @@ public class Sample {
         book.onReady(new Runnable() {
             public void run() {
                 try {
-                    //book.add(recipe);
+                    //for(int i=0;i<5;i++)book.add(recipe);
                     //printRecipe(book.get(recipe.getName()));
 
-                    for (Recipe r : book.search("(((name has cake)) AND (prepTime <= 10))")) {
-                        printRecipe(r);
-                    }
+                    book.search("(((name has cake)) AND (prepTime <= 10))", new ResultsHandler() {
+                        public void onResults(ArrayList<Recipe> results) {
+                            System.out.format("Results:\n");
+                            for (Recipe r : results) System.out.println("* " + r.getName()); // printRecipe(r);
+                        }
+                    });/**/
                 } catch (Exception ex) { ex.printStackTrace(); }
             }
         });
