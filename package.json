@@ -1,0 +1,23 @@
+{
+  "name": "librecipe",
+  "version": "1.0.0",
+  "description": "library to manage recipes",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEGBK/term-project.git"
+  },
+  "author": "Karim Alibhai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SEGBK/term-project/issues"
+  },
+  "homepage": "https://github.com/SEGBK/term-project#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "natural": "^0.4.0",
+    "request": "^2.78.0"
+  }
+}
