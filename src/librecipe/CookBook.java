@@ -207,6 +207,7 @@ public class CookBook {
                     else that.map = new RecipeMap(json);
                     for (Runnable run : that.ready) run.run();
                 } catch (Exception ex) {
+                    ex.printStackTrace();
                     for (EventHandler run : that.error) run.run(ex.getStackTrace().toString());
                 }
             }
