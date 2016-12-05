@@ -69,6 +69,42 @@ public class Recipe extends Saveable {
     public Recipe setType(String type) { this.type = type; return this; }
 
     /**
+     * The class of the recipe.
+     */
+    private String recipeClass;
+
+    /**
+     * Retrieves the class of the recipe.
+     * @return the strClass as a string
+     */
+    public String getRecipeClass() { return this.recipeClass; }
+
+    /**
+     * Sets the class of the recipe.
+     * @param strClass the strClass to set for this recipe
+     * @return the Recipe object for chaining
+     */
+    public Recipe setRecipeClass(String recipeClass) { this.recipeClass = recipeClass; return this; }
+
+    /**
+     * The category of the recipe.
+     */
+    private String category;
+
+    /**
+     * Retrieves the category of the recipe.
+     * @return the category as a string
+     */
+    public String getCategory() { return this.category; }
+
+    /**
+     * Sets the category of the recipe.
+     * @param category the category to set for this recipe
+     * @return the Recipe object for chaining
+     */
+    public Recipe setCategory(String category) { this.category = category; return this; }
+
+    /**
      * A list of preparation steps to follow when cooking the recipe.
      */
     private ArrayList<Step> pSteps;
@@ -363,7 +399,9 @@ public class Recipe extends Saveable {
     public String getProperty(String name) {
         switch (name) {
             case "name": return this.getName();
+            case "class": return this.getRecipeClass();
             case "type": return this.getType();
+            case "category": return this.getCategory();
             case "prepTime": return ((Double)this.prepTime()).toString();
             case "cookTime": return ((Double)this.cookTime()).toString();
             case "time": return ((Double)this.totalTime()).toString();
