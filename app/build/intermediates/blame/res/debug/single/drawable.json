@@ -68,12 +68,12 @@
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\drawable\\design_bottom_navigation_item_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dialog_background.xml",
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable\\dialog_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",

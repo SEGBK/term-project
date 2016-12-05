@@ -84,28 +84,28 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        try {
-            final CookBook book = new CookBook();
+try {
+    final CookBook book = new CookBook();
 
-            book.onError(new EventHandler() {
-                public void run(String data) {
-                    Log.d("COOKBOOKLOG",data);
-                }
-            });
-
-            book.onReady(new Runnable() {
-                public void run() {
-                    // here, you can hide your activity indicator and start using cookbook
-                    cookBook.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
-                        public void onResults(ArrayList<librecipe.Recipe> arrayList) {
-                            Log.d("", "");
-                        }
-                    });
-                }
-            });
-        } catch (Exception ex){
-
+    book.onError(new EventHandler() {
+        public void run(String data) {
+            Log.d("COOKBOOKLOG",data);
         }
+    });
+
+    book.onReady(new Runnable() {
+        public void run() {
+            // here, you can hide your activity indicator and start using cookbook
+            cookBook.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
+                public void onResults(ArrayList<librecipe.Recipe> arrayList) {
+                    Log.d("", "");
+                }
+            });
+        }
+    });
+} catch (Exception ex){
+
+}
 
         ListView recipeList = (ListView)findViewById(R.id.recipe_list);
         ArrayList<Recipe> l = new ArrayList<Recipe>();
