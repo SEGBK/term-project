@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="25"
+    density="420dpi"
+    format="8"
+    plugin-version="2.2.2"
+    timestamp="7462536503467"
+    token="5659449351614543342"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <build
+        timestamp="6045512896010"
+        verifier="MANIFEST_FILE_CHANGE" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="6558534581270"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\2\librecipe_628304392d38c3e2011ff6767e2fcd2ec48c9a33\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="7368867987090"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="7462536503467"
+        verifier="COLD_SWAP_REQUESTED" />
+    <build
+        timestamp="83428866175056"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

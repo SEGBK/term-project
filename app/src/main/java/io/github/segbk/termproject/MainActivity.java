@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -31,6 +32,7 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import io.github.segbk.termproject.activities.NewRecipe;
 import io.github.segbk.termproject.adapters.RecipeMainAdapter;
@@ -38,10 +40,14 @@ import io.github.segbk.termproject.listeners.RecipeListOnClickListener;
 import io.github.segbk.termproject.models.Ingredient;
 import io.github.segbk.termproject.models.Recipe;
 import io.github.segbk.termproject.models.Step;
+import librecipe.CookBook;
+import librecipe.ResultsHandler;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+        private CookBook cookBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +129,31 @@ public class MainActivity extends AppCompatActivity
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                try {
+                    if (cookBook == null) cookBook = new CookBook();
+                } catch (Exception ex){
+
+                }
+                if (!newText.equals("")) {
+                    cookBook.search(newText, new ResultsHandler() {
+                        @Override
+                        public void onResults(ArrayList<librecipe.Recipe> arrayList) {
+                            Log.d("ARRAY", String.valueOf(arrayList.size()));
+                        }
+                    });
+                    return true;
+                }
+                return false;
+            };
+        });
         return true;
     }
 

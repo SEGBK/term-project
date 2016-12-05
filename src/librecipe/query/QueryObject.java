@@ -72,7 +72,7 @@ class QueryObject {
      * @param recipe the Recipe object to borrow property values from
      * @return the Expression object that can be evaluated
      */
-    public Expression getQuery(Recipe recipe) {
+    public Expression getQuery(final Recipe recipe) {
         final QueryObject that = this;
         return new Expression() {
             public boolean eval() {

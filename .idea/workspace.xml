@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="8b3f6b7e-3685-4a03-adf5-c29b4d3fd0e8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
+=======
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8b3f6b7e-3685-4a03-adf5-c29b4d3fd0e8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Makefile" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/librecipe.jar" afterPath="$PROJECT_DIR$/librecipe.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/librecipe/CookBook.java" afterPath="$PROJECT_DIR$/src/librecipe/CookBook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/librecipe/query/QueryObject.java" afterPath="$PROJECT_DIR$/src/librecipe/query/QueryObject.java" />
+>>>>>>> lib
     </list>
     <ignored path="term-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,6 +103,12 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+>>>>>>> lib
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
@@ -122,6 +145,14 @@
     <property name="device.picker.selection" value="FA6970301905" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="io.github.segbk.termproject" />
+    </key>
+  </component>
+>>>>>>> lib
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -416,6 +447,12 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+>>>>>>> lib
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8b3f6b7e-3685-4a03-adf5-c29b4d3fd0e8" name="Default" comment="" />
@@ -458,6 +495,17 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.102878466" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+>>>>>>> lib
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
