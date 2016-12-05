@@ -17,10 +17,14 @@ run: $(JAR_FILE)
 	javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample.java
 	time java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
 
-setup:
+setup: $(JAR_FILE)
 	node scripts/search.js "$(QUERY)"
 	cd scripts && javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" JSON2FB.java
 	cd scripts && java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" JSON2FB
+
+search: $(JAR_FILE)
+	cd scripts && javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Search.java
+	cd scripts && java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Search "$(QUERY)"
 
 docs: .PHONY
 	javadoc -cp "$(CLASSPATH)" -d docs src/librecipe/*.java src/librecipe/query/*.java
