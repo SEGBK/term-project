@@ -31,7 +31,7 @@ public final class Runner {
                         passed,
                         tests.length
                     );
-                
+
                     System.exit(passed < tests.length ? -1 : 0);
                 } else {
                     tests[i].run(this);
