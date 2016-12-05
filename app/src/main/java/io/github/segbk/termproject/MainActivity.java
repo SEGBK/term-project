@@ -82,10 +82,17 @@ public class MainActivity extends AppCompatActivity
         Step general = new Step("Dummy Step");
         Step[] stepList = {general,general,general,general};
 
-        
+
 
         try {
             final CookBook book = new CookBook();
+
+            book.onError(new EventHandler() {
+                public void run(String data) {
+                    Log.d("COOKBOOKLOG",data);
+                }
+            });
+
             book.onReady(new Runnable() {
                 public void run() {
                     // here, you can hide your activity indicator and start using cookbook
