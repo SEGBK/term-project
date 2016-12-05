@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="25"
+    density="420dpi"
+    format="8"
+    plugin-version="2.2.2"
+    timestamp="2094467747946"
+    token="5659449351614543342"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="7687" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="1080" />
+    <task
+        name="verifier"
+        duration="54" />
+
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_2445dce038f5c23bf7c7d1eeddabfd39ccc2cf0f\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.4.0_d4c0cc43155f208791e8ec407ede1367ae9db89a\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_edfd0d3b0d3db6edf11f5099a48e3d56ccdb6341\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.daimajia.androidanimations-library-1.1.3_36536c75b0ed48575ddae66df5d2d95aed15eb34\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_fdee0136e59661dbe3a9f48fd780e9d3e5fd38e0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_d7c4ae9e3f951b48d4daee7abbe4faf2bc25e34b\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_932301f86fa907ee603bafc308f95fb6b7cfca56\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_3f4b69e5b81770e00c42a164c3421b9687fb20ec\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_668b2c2c51d02b0f67f92b36306c94380386cbd1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.4.0_eaddcec0c024b2cfd82725d09fd259be5291a7e2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_0a4aa6bcc4aad46f195acb7421c3e1b721777de6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_d506b87c81d8aab84b4dc4d69b39b89036350552\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_2a9520087f4c84f133a6092676613dbc367e4cfa\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_26f252e925edcdd18e06ccad3246e365121ce4d9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_c083f2bef88e65a179f108d1e950da35f8afd0ee\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.daimajia.easing-library-1.0.1_629f4204f19014fabe38bf322cb85e6f5d6a1356\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_f4f65191f9178d69517c4b20f5260b390085f221\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_1ba539dea8aefc778b365d51158111d9ad0cfa59\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_f0ffc39e3c7451cc71ea0ac4801df74d474e71dc\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_53fa0c9283986dc63ce33a4632f2626b9c78a171\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_ad2758381f10f3eede70b13f4ab9a99fbbfaa4ff\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_4155bc949270d5f0a768799c148828af70613f06\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_71743ab2260743f55f65690b89a7675c8665ca36\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_8a463a0ee2378ed94328ab6ad204a5f6994b7451\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_ea92f0a9a1837cbfd081dadc8f93f1981df77047\classes.dex"
+        type="DEX" />
+
+</instant-run>
