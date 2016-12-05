@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="ae7d90f299f31fd5ee0bd3beda7e3aa1aca10ab4">
+        sha1="aa663329e19705449296d31bcc605a4dfc572a7d">
         <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9\classes.dex" />
     </item>
     <item
@@ -196,7 +196,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="d00b9580cf149d52bc829695b91e6646b44f4151">
+        sha1="633d4dd468c800727578d66d6ad88777b484d6b4">
         <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1\classes.dex" />
     </item>
     <item
@@ -214,7 +214,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="640e363feb3cf22c6f92c3061b20643804447df4">
+        sha1="3fae4d6a5d555573774227da9e0d0598fd88c217">
         <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\2\librecipe_628304392d38c3e2011ff6767e2fcd2ec48c9a33\classes.dex" />
     </item>
     <item
