@@ -219,14 +219,16 @@ public class CookBook {
     /**
      * Add an event listener for when CookBook errors out.
      * @param run an EventHandler object to subscribe to the error event
+     * @return the CookBook object for chaining
      */
-    public void onError(EventHandler run) { this.error.add(run); }
+    public CookBook onError(EventHandler run) { this.error.add(run); return this; }
     private ArrayList<EventHandler> error;
 
     /**
      * Add an event listener for when CookBook is ready.
      * @param run an EventHandler object to subscribe to the ready event
+     * @return the CookBook object for chaining
      */
-    public void onReady(Runnable run) { this.ready.add(run); }
+    public CookBook onReady(Runnable run) { this.ready.add(run); return this; }
     private ArrayList<Runnable> ready;
 }
