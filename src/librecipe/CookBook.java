@@ -98,6 +98,16 @@ public class CookBook {
     }
 
     /**
+     * Deletes a saved Recipe object.
+     * @param name the name of a Recipe
+     * @throws Exception if JSON deserialization fails
+     * @return the Recipe object being retrieved
+     */
+    public Recipe rm(String name) throws Exception {
+        return new Recipe(this.request("DELETE", "recipes/" + map.get(name) + ".json", null));
+    }
+
+    /**
      * Executes a search and calls ResultsHandler object on complete.
      * @param query the query as a String
      * @param eventHandler the ResultsHandler object to call
