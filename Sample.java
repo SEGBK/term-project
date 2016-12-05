@@ -15,7 +15,9 @@ public class Sample {
         Recipe recipe = new Recipe();
 
         recipe.setName("Cupcakes");
-        recipe.setType("desert");
+        recipe.setRecipeClass("Chicken"); // My cupcakes have chicken. Deal with it.
+        recipe.setType("Dessert");
+        recipe.setCategory("English");
 
         for (String step : new String[] {
             "Prep things.",
@@ -53,13 +55,18 @@ public class Sample {
 
         System.out.println("---");
         final CookBook book = new CookBook();
-        book.onReady(new Runnable() {
+        book.onError(new EventHandler() {
+            public void run(String data) {
+                System.out.println(data);
+                System.exit(-1);
+            }
+        }).onReady(new Runnable() {
             public void run() {
                 try {
-                    //for(int i=0;i<5;i++)book.add(recipe);
+                    for(int i=0;i<5;i++)book.add(recipe);
                     //printRecipe(book.get(recipe.getName()));
 
-                    book.search("(((name has cake)) AND (prepTime <= 10))", new ResultsHandler() {
+                    /*book.search("(((name has cake)) AND (prepTime <= 10))", new ResultsHandler() {
                         public void onResults(ArrayList<Recipe> results) {
                             System.out.format("Results:\n");
                             for (Recipe r : results) System.out.println("* " + r.getName()); // printRecipe(r);

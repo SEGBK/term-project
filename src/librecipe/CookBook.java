@@ -14,6 +14,10 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import javax.net.ssl.HttpsURLConnection;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+
 /**
  * Handles the storage and retreival of all recipes.
  */
@@ -207,8 +211,11 @@ public class CookBook {
                     else that.map = new RecipeMap(json);
                     for (Runnable run : that.ready) run.run();
                 } catch (Exception ex) {
-                    ex.printStackTrace();
-                    for (EventHandler run : that.error) run.run(ex.getStackTrace().toString());
+                    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                    ex.printStackTrace(new PrintStream(bytes));
+                    String error = new String(bytes.toByteArray(), StandardCharsets.UTF_8);
+
+                    for (EventHandler run : that.error) run.run(error);
                 }
             }
         }.start();
