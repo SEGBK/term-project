@@ -199,8 +199,6 @@ public class CookBook {
      */
     public CookBook() throws Exception {
         final CookBook that = this;
-        this.ready = new ArrayList<>();
-
         new Thread() {
             public void run() {
                 try {
@@ -222,7 +220,7 @@ public class CookBook {
      * @return the CookBook object for chaining
      */
     public CookBook onError(EventHandler run) { this.error.add(run); return this; }
-    private ArrayList<EventHandler> error;
+    private ArrayList<EventHandler> error = new ArrayList<EventHandler>();
 
     /**
      * Add an event listener for when CookBook is ready.
@@ -230,5 +228,5 @@ public class CookBook {
      * @return the CookBook object for chaining
      */
     public CookBook onReady(Runnable run) { this.ready.add(run); return this; }
-    private ArrayList<Runnable> ready;
+    private ArrayList<Runnable> ready = new ArrayList<Runnable>();
 }
