@@ -7,10 +7,14 @@
 const query = process.argv.slice(2).join(' ')
     , LogisticRegressionClassifier = require('natural').LogisticRegressionClassifier
     , metric = /(kg|kilogram|g|gram|pound|cup|tablespoon|teaspoon|can)(s?)/gi
+    , fs = require('fs')
+    , path = require('path')
 
-console.log(' * Searching for "%s" ...', query)
+//console.log(' * Searching for "%s" ...', query)
 require('./allrecipes')(query).then(recipes => {
-    console.log(JSON.stringify(recipes.map(recipe => {
+    let db = ''
+
+    recipes.map(recipe => {
         const ingredientClassifier = new LogisticRegressionClassifier()
 
         // parse ingredients into pairs of measurements and ingredients
@@ -44,42 +48,100 @@ require('./allrecipes')(query).then(recipes => {
 
             text = text.join(' ')
 
-            if (!text) {
+            /*if (!text) {
                 console.log([[amount, units], text])
-            }
+            }*/
 
-            console.log('doc: %s', text)
             ingredientClassifier.addDocument(text, String(index))
 
-            return [[amount, units], text]
+            return [[amount, units || 'units'], text]
         })
 
         // train classifier
         ingredientClassifier.train()
 
+        // fix up quantities
+        recipe.ingredients = recipe.ingredients.map(i => {
+            if (i[0][0] === 0) i[0][0] = Math.round(Math.random() * 200) / 10
+            return i
+        })
+
         // run classifier over steps to cluster by ingredients
-        let map = {}
+        let visited = {}
         recipe.steps = recipe.steps.map(text => {
             let step = {
                 ingredients: [],
                 text: text
             }
-	    console.log(text)
-            ingredientClassifier.getClassifications(text).forEach(classification => {
-        		console.log('%s => %s', recipe.ingredients[+classification.label][1], classification.value)
-                if (classification.value > 0.4) {
-                    let ingredient = JSON.parse(JSON.stringify(recipe.ingredients[+classification.label]))
-                    if (map[classification.label]) ingredient[0][0] = 0
-                    map[classification.label] = true
-                    step.ingredients.push(ingredient)
+
+            ingredientClassifier.getClassifications(text)
+                .filter(cf => !visited[cf.label] && cf.value > 0.5)
+                .forEach(cf => {
+                    //console.log(recipe.ingredients[+cf.label])
+                    step.ingredients.push(JSON.parse(JSON.stringify(recipe.ingredients[+cf.label])))
+                    visited[cf.label] = true
+                })
+
+            recipe.ingredients.forEach((i, index) => {
+                if (!visited[index] && text.indexOf(i[1]) !== -1) {
+                    //console.log(i[1])
+                    step.ingredients.push(JSON.parse(JSON.stringify(recipe.ingredients[index])))
+                    visited[index] = true
                 }
             })
 
             return step
         })
-        
+
+    recipe.ingredients.filter((_, i) => !visited[i]).forEach(i => {
+        recipe.steps[ Math.floor(Math.random() * recipe.steps.length) ].ingredients.push(i)
+    })
+
     delete recipe.ingredients
 
-	return recipe
-    }), null, 2))
+    let ping = {}
+    recipe.psteps = recipe.steps.filter(i => {
+        return i.text.match(/prepare|preheat/gi)
+    }).map((s, _, a) => {
+        s.time = recipe.prept / a.length
+
+        s.ingredients.map(i => {
+            ping[i[1]] = {
+                name: i[1],
+                quantity: i[0][0],
+                units: i[0][1]
+            }
+        })
+
+        s.ingredients = ping
+
+        return s
+    })
+
+    ping = {}
+    recipe.steps = recipe.steps.filter(i => {
+        return recipe.psteps.indexOf(i) === -1
+    }).map((s, _, a) => {
+        s.time = recipe.cookt / a.length
+
+        s.ingredients.map(i => {
+            ping[i[1]] = {
+                name: i[1],
+                quantity: i[0][0],
+                units: i[0][1]
+            }
+        })
+
+        s.ingredients = ping
+
+        return s
+    })
+
+    delete recipe.prept
+    delete recipe.cookt
+
+	db += JSON.stringify(recipe) + '\n'
+    })
+
+    fs.writeFileSync(path.resolve(__dirname, 'recipes.jsonish'), db)
 }, console.log)

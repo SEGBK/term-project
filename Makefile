@@ -3,6 +3,7 @@
 
 CLASSPATH	= .:$(PWD)/lib/jackson-all-1.9.0.jar
 JAR_FILE	= librecipe.jar
+QUERY		?= cake
 
 all: $(JARFILE)
 
@@ -15,6 +16,11 @@ $(JAR_FILE): build
 run: $(JAR_FILE)
 	javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample.java
 	time java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" Sample
+
+setup:
+	node scripts/search.js "$(QUERY)"
+	cd scripts && javac -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" JSON2FB.java
+	cd scripts && java -cp "$(CLASSPATH):${PWD}/$(JAR_FILE)" JSON2FB
 
 docs: .PHONY
 	javadoc -cp "$(CLASSPATH)" -d docs src/librecipe/*.java src/librecipe/query/*.java

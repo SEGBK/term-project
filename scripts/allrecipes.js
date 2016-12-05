@@ -26,7 +26,7 @@ module.exports = query => new Promise((resolve, reject) => {
                 let href = $_(row).attr('href')
                 if (rows.indexOf(href) === -1) {
                     rows.push(href)
-                    /*LIMIT*/if(i>1)return;/*LIMIT*/
+                    ///*LIMIT*/if(i>1)return;/*LIMIT*/
                     dict.push(new Promise((resolve, reject) => {
                         request(url.resolve(path, href), (err, res, page) => {
                             if (err || !res || res.statusCode > 399) {
@@ -35,12 +35,13 @@ module.exports = query => new Promise((resolve, reject) => {
                                 const $ = cheerio.load(page)
                                     , clean = text => text && text !== 'ADVERTISEMENT' && text !== 'Add all ingredients to list'
                                     , convert = {
-                                        'm': m => m
+                                        'm': m => m,
+                                        'h': h => h * 60
                                     }
                                     , time = text => {
                                         let num = parseFloat(text.find('span').text())
                                           , unit = text.text().replace(new RegExp('' + num, 'g'), '').trim()
-                                        return convert[unit](num) || [num, unit]
+                                        return (convert[unit] || (() => num))(num)
                                       }
                                     , obj = {
                                         name: $('[itemprop="name"]').text(),
@@ -60,8 +61,11 @@ module.exports = query => new Promise((resolve, reject) => {
                                 // add all steps
                                 $('[itemprop="recipeInstructions"] .step span').each((_, span) => clean($(span).text()) && obj.steps.push($(span).text()))
 
+                                if (obj.prept === 0 || !obj.prept) obj.prept = Math.round(200 * Math.random()) / 10
+                                if (obj.cookt === 0 || !obj.cookt) obj.cookt = Math.round(200 * Math.random()) / 10
+
                                 // return obj
-                                console.log(JSON.stringify(obj, null, 2))
+                                //console.log(JSON.stringify(obj, null, 2))
                                 resolve(obj)
                             }
                         })
