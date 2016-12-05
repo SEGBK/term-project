@@ -20,6 +20,9 @@ public class Query {
     public Query(String query) {
         this.query = new ArrayList<Entry>();
 
+        // default query
+        if (query.indexOf("(") == -1) query = "(name has " + query + ")";
+
         // clean the query
         query = query.replaceAll("\\s+", " ") // we want to treat all whitespaces as a single space
                      .replaceAll("\\s*\\(\\s*", "(").replaceAll("\\s*\\)\\s*", ")") // remove whitespaces beside brackets
