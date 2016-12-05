@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "library to manage recipes",
   "scripts": {
-    "search": "node scripts/search.js",
+    "search": "make librecipe.jar; cd scripts; javac -cp '.:../lib/jackson-all-1.9.0.jar:../librecipe.jar' Search.java; java -cp '.:../lib/jackson-all-1.9.0.jar:../librecipe.jar' Search",
     "test": "make test"
   },
   "repository": {
