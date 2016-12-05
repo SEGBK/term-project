@@ -130,7 +130,7 @@ public class CookBook {
      * @param eventHandler the ResultsHandler object to call
      * @return the CookBook object for chaining
      */
-    public CookBook search(Query query, ResultsHandler eventHandler) {
+    public CookBook search(final Query query, final ResultsHandler eventHandler) {
         final CookBook that = this;
 
         // general results list
