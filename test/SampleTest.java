@@ -5,72 +5,28 @@ import librecipe.*;
 import test.util.*;
 
 public class SampleTest extends Test {
-  public static String [] recipe_Name ={"Teaxs Burger ","NewYork Steaks ","Meat Subs ", "Mexcian Burger ","Cheese Cake ","Youger ","Fried Chicken ","Seasoning Salmon "};
-
-  public static String [] ingredient_Name={"tomato ","cutted beef ","steak ","pork ","meat sauces ","pork belly ",
-                             "Bacon "," Butter ","Chicken breast ","Salt","Soy Sauces ","Honey ","Powder sugar "
-                             ,"Sucrose ", "Garlic "};
-  public static String [] step ={"cut the ","putted into oven " ,"put the", "heating the pan ","putting oil on the pan ","seasoning ","roast in the pan ",};
 
     public SampleTest() {
-        super("Basic Functionality check test");
+
+        super("Recipe Test");
     }
 
     public void test(Runnable end) throws Throwable {
-      recipe_Test_cases1 test1= new recipe_Test_cases1();
-      Recipe recipe1= test1.testCase;
-      equal(recipe1.getName(),"Mother deep fried Chicken burger","test setName method");
-
-      recipe1.setName("Just setting");
-      equal(recipe1.getName(),"Just setting","Testing setName");
-
-
-      String pre =recipe1.getSteps().get(recipe1.getSteps().size()-1).getText();
-      equal(pre ,"Let the chicken breast to rest for 5 minutes","Testing the geter on the Step");
-
-      String newStep= "Cutting the burger in half.";
-      Step testnew = new Step();
-      testnew.setTime(0);testnew.setText(newStep);recipe1.addStep(testnew);
-      recipe1.addStep(testnew); Step ass = recipe1.getSteps().get(recipe1.getSteps().size()-1);
-      String newer = ass.getText();
-      equal(newer,"Cutting the burger in half.","Testing adding new steps");
-
-      ArrayList<String> test = new ArrayList<String>();
-      for (String i:recipe1.iterateIngredients()){
-        test.add(i);
-      }
-      equal(test.contains("Freals"),false,"Test ingredients iterator");
+      recipe_Test_cases1 obj = new recipe_Test_cases1();
+      Recipe recipeTest = obj.testCase;
+      equal(recipeTest.getName(),"Mother deep fried Chicken burger","Getting name of the recipe");
+      equal(recipeTest.getSteps().get(recipeTest.getSteps().size()-1).getText(),
+                                              "Let the chicken breast to rest for 5 minutes",
+                                              "Getting step from recipe");
+      equal(obj.getIngredientFromrecipe("Chicken breast"),"Chicken breast", "Testing getting ingreident");
+      Recipe rec = new Recipe (); rec.setName ("Testing name");
+      equal(rec.getName(), "Testing name", "Constructor testing");
+      Step newStep =new Step(); newStep.setText("do somthing");newStep.addIngredient("task",1,"gram");
+      rec.addStep(newStep);
+      equal(rec.getSteps().get(0).getText(),"do somthing", "Testing adding new step" );
       end.run();
     }
 
-    public static void generatetest(){
-      ArrayList<Recipe> recipetestcase=  new ArrayList<Recipe>();
-
-      Random randomgenerator = new Random();
-      int count=20;
-      while(count != 0){
-        count--;
-        ArrayList<Step> temp_step = new ArrayList<Step>();
-        int rand_recipename= randomgenerator.nextInt(3);
-        int rand_ingredients=randomgenerator.nextInt(3);
-        int rand_step = randomgenerator.nextInt(step.length);
-        Recipe  recipe_iterator = new Recipe();
-        recipe_iterator.setName(recipe_Name[rand_recipename]);
-        Step input_step= new Step();
-        int rand_nums_steps = randomgenerator.nextInt(10)+1;
-        while(rand_nums_steps != 0){
-          input_step.setText(step[rand_step]+ingredient_Name[rand_ingredients]);
-          input_step.setTime(randomgenerator.nextInt(10)+1);
-          input_step.addIngredient(ingredient_Name[rand_ingredients],randomgenerator.nextInt(20),ingredient_Name[rand_ingredients]);
-          rand_nums_steps--;
-        }
-        recipe_iterator.addStep(input_step);
-        recipetestcase.add(recipe_iterator);
-        }
-      for (Recipe i:recipetestcase){
-        printRecipe(i);
-        }
-      }
 
       public class recipe_Test_cases1{
           Recipe testCase;
@@ -116,6 +72,13 @@ public class SampleTest extends Test {
 
 
           return test1;
+        }
+
+        public String getIngredientFromrecipe(String ingre){
+          for ( String i: testCase.iterateIngredients()){
+            if(i == ingre) return i;
+          }
+          return null;
         }
 
       }

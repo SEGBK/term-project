@@ -157,7 +157,7 @@ public class CookBook {
                     for (String name : that.map) {
                         try {
                             Recipe recipe = that.get(name);
-                            if (query.matches(recipe)) results.add(recipe);
+                            if (query.matches(recipe, results)) results.add(recipe);
                         }  catch (Exception e) { /**/ }
                     }
                 
@@ -175,7 +175,7 @@ public class CookBook {
                         for (int j = a; j <= b; j ++) {
                             try {
                                 Recipe recipe = that.get(recipes[j]);
-                                if (query.matches(recipe)) results.add(recipe);
+                                if (query.matches(recipe, results)) results.add(recipe);
                             } catch (Exception ex) { /**/ }
                         }
 

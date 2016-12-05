@@ -129,8 +129,8 @@ public class Query {
      * @param recipe the Recipe object to test against
      * @return true if query matches object
      */
-    public boolean matches(Recipe recipe) {
-        return this.matches(this.query, recipe);
+    public boolean matches(Recipe recipe, ArrayList<Recipe> results) {
+        return this.matches(this.query, recipe, results);
     }
 
     /**
@@ -149,7 +149,7 @@ public class Query {
      * @param recipe the Recipe object to test against
      * @return true if query matches object
      */
-    public boolean matches(ArrayList<Entry> entries, Recipe recipe) {
+    public boolean matches(ArrayList<Entry> entries, Recipe recipe, ArrayList<Recipe> results) {
         boolean state = false;
         Conjunction conj = this.conjunctions[1];
 
@@ -158,11 +158,11 @@ public class Query {
 
             switch (e.type()) {
                 case 'c':
-                state = conj.test(this.exp(state), this.exp(this.matches(e.getCondition(), recipe)));
+                state = conj.test(this.exp(state), this.exp(this.matches(e.getCondition(), recipe, results)));
                 break;
 
                 case 'q':
-                state = conj.test(this.exp(state), e.getQuery().getQuery(recipe));
+                state = conj.test(this.exp(state), e.getQuery().getQuery(recipe, results));
                 break;
 
                 default:

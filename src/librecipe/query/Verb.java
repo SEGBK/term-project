@@ -1,5 +1,8 @@
 package librecipe.query;
 
+import java.util.ArrayList;
+import librecipe.Recipe;
+
 /**
  * Abstraction representing a query verb.
  */
@@ -27,11 +30,15 @@ abstract class Verb {
         return false;
     }
 
+    public String toString() {
+        return this.verbs[0];
+    }
+
     /**
      * Evaluates verb test on property value.
      * @param propertyValue the value of the property of the Recipe object
      * @param query the String tested against the property
      * @return true if the property value matches the query
      */
-    public abstract boolean test(String propertyValue, String query);
+    public abstract boolean test(String propertyValue, String query, ArrayList<Recipe> results);
 }

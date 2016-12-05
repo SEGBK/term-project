@@ -1,5 +1,4 @@
 package test.util;
-
 import test.*;
 
 /**
@@ -15,7 +14,8 @@ public final class Runner {
                  * All the objects below should implement
                  * the interface Test.
                  */
-                new SampleTest()
+                 new SampleTest(),
+                 new unitTest(),
             };
 
             public void run(Boolean success) {
