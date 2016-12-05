@@ -97,18 +97,6 @@ public class CookBook {
         return new Recipe(this.request("GET", "recipes/" + map.get(name) + ".json", null));
     }
 
-    /*
-    public ArrayList<Recipe> search(Query query) throws Exception {
-        ArrayList<Recipe> results = new ArrayList<Recipe>();
-
-        for (String name : this.map.getMap().keySet()) {
-            Recipe recipe = this.get(name);
-            if (query.matches(recipe)) results.add(recipe);
-        }
-
-        return results;
-    }*/
-
     /**
      * Executes a search and calls ResultsHandler object on complete.
      * @param query the query as a String
