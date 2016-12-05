@@ -80,7 +80,17 @@ public class MainActivity extends AppCompatActivity
         Step general = new Step("Dummy Step");
         Step[] stepList = {general,general,general,general};
 
+        try {
+            cookBook = new CookBook();
+            cookBook.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
+                @Override
+                public void onResults(ArrayList<librecipe.Recipe> arrayList) {
+                    Log.d("","");
+                }
+            });
+        } catch (Exception ex){
 
+        }
 
         ListView recipeList = (ListView)findViewById(R.id.recipe_list);
         ArrayList<Recipe> l = new ArrayList<Recipe>();
