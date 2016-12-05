@@ -22,6 +22,7 @@ require('./allrecipes')(query).then(recipes => {
             let i = 0
               , amount = ''
               , units = ''
+              , raw = text
 
             // separate text from amount
             for (i = 0; i < text.length; i += 1) {
@@ -46,16 +47,16 @@ require('./allrecipes')(query).then(recipes => {
                 return prev + (num.length === 2 ? parseInt(num[0], 10) / parseInt(num[1], 10) : parseFloat(num.join('')))
             }, 0)
 
+            //if (!text) console.log([[amount, units], text])
+            //else console.log(raw)
+
+            if (!text || String(text).match(/[0-9]+/g)) return;
+
             text = text.join(' ')
-
-            /*if (!text) {
-                console.log([[amount, units], text])
-            }*/
-
             ingredientClassifier.addDocument(text, String(index))
 
             return [[amount, units || 'units'], text]
-        })
+        }).filter(e => e)
 
         // train classifier
         ingredientClassifier.train()
@@ -77,12 +78,13 @@ require('./allrecipes')(query).then(recipes => {
             ingredientClassifier.getClassifications(text)
                 .filter(cf => !visited[cf.label] && cf.value > 0.5)
                 .forEach(cf => {
-                    //console.log(recipe.ingredients[+cf.label])
+                    if (!recipe.ingredients[+cf.label]) return;
                     step.ingredients.push(JSON.parse(JSON.stringify(recipe.ingredients[+cf.label])))
                     visited[cf.label] = true
                 })
 
             recipe.ingredients.forEach((i, index) => {
+                if (!recipe.ingredients[index]) return;
                 if (!visited[index] && text.indexOf(i[1]) !== -1) {
                     //console.log(i[1])
                     step.ingredients.push(JSON.parse(JSON.stringify(recipe.ingredients[index])))
