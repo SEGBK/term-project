@@ -205,11 +205,10 @@ public class CookBook {
                     String json = that.request("GET", "recipe-map.json", null);
                     if (json.equals("null")) that.map = new RecipeMap();
                     else that.map = new RecipeMap(json);
+                    for (Runnable run : that.ready) run.run();
                 } catch (Exception ex) {
                     for (EventHandler run : that.error) run.run(ex.getStackTrace().toString());
                 }
-
-                for (Runnable run : that.ready) run.run();
             }
         }.start();
     }
