@@ -9,4 +9,5 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
     <color name="transparent">#00000000</color>
+    <color name="graytransparent">#80000000</color>
 </resources>

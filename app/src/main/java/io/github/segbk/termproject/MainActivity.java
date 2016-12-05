@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity
 
         ListView recipeList = (ListView)findViewById(R.id.recipe_list);
         ArrayList<Recipe> l = new ArrayList<Recipe>();
-        l.add(new Recipe("Sugar and Flour",i,stepList));
-        l.add(new Recipe("Water and Flour",i2,stepList));
-        l.add(new Recipe("Saltwater",i3,stepList));
+        l.add(new Recipe("Sugar and Flour",i,stepList, "http://weknowyourdreams.com/images/food/food-07.jpg"));
+        l.add(new Recipe("Water and Flour",i2,stepList,"http://www.seattleorganicrestaurants.com/vegan-whole-foods/images/Food-Guidelines.jpg"));
+        l.add(new Recipe("Saltwater",i3,stepList,"http://dreamatico.com/data_images/food/food-6.jpg"));
         recipeList.setAdapter(new RecipeMainAdapter(this, R.layout.recipe_layout_item, l));
         recipeList.setOnItemClickListener(new RecipeListOnClickListener(this));
     }

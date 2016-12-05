@@ -10,12 +10,19 @@ public class Recipe {
     private String Title;
     private Ingredient[] Ingredients;
     private Step[] Steps;
-    private Bitmap Image;
+    private String ImageURL;
 
     public Recipe(String title, Ingredient[] ingredients, Step[] steps) {
         Title = title;
         Ingredients = ingredients;
         Steps = steps;
+    }
+
+    public Recipe(String title, Ingredient[] ingredients, Step[] steps, String imageURL) {
+        Title = title;
+        Ingredients = ingredients;
+        Steps = steps;
+        ImageURL = imageURL;
     }
 
     public String getTitle() {
@@ -38,19 +45,24 @@ public class Recipe {
         Ingredients = ingredients;
     }
 
-    public Step[] getSteps() {
-        return Steps;
+    public String getSteps() {
+        String stepString = "";
+        for(Step s : Steps){
+            stepString += s.getInsruction();
+            stepString += "/n";
+        }
+        return stepString;
     }
 
     public void setSteps(Step[] steps) {
         Steps = steps;
     }
 
-    public Bitmap getImage() {
-        return Image;
+    public String getImage() {
+        return ImageURL;
     }
 
-    public void setImage(Bitmap image) {
-        Image = image;
+    public void setImage(String image) {
+        ImageURL = image;
     }
 }

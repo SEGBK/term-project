@@ -8,6 +8,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="io.github.segbk.termproject.SplashScreen">
+    tools:context="io.github.segbk.termproject.SplashScreen"
+    android:background="@color/primary">
 
+    <TextView
+        android:text="Splash Screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
 </RelativeLayout>

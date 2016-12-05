@@ -11,6 +11,7 @@
     <ListView
         android:id="@+id/recipe_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@color/transparent">
     </ListView>
 </RelativeLayout>

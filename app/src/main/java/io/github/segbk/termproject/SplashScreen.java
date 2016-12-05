@@ -1,5 +1,6 @@
 package io.github.segbk.termproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,5 +10,13 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex){
+
+        }
+
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }

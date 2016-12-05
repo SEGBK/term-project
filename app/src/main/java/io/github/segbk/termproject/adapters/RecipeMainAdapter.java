@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -43,7 +46,8 @@ public class RecipeMainAdapter extends ArrayAdapter<Recipe> {
         ((TextView)v.findViewById(R.id.item_title)).setText(item.getTitle());
         ((TextView)v.findViewById(R.id.item_cook_time)).setText(item.getIngredients());
         ((TextView)v.findViewById(R.id.item_description)).setText("Description of recipe.");
-
+        ImageView img_background = (ImageView)v.findViewById(R.id.img_background);
+        Picasso.with(getContext()).load(R.drawable.food).into(img_background);
         return v;
 
     }
