@@ -2,3 +2,4 @@ docs
 *.class
 node_modules
 *.log
+scripts/recipes.jsonish
