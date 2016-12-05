@@ -67,6 +67,22 @@ require('./allrecipes')(query).then(recipes => {
             return i
         })
 
+        recipe.recipeClass = recipe.ingredients.map(i => {
+            if (i[1].match(/Chicken/i)) return 'Chicken'
+            if (i[1].match(/Beef/i)) return 'Beef'
+            if (i[1].match(/Seafood/i)) return 'Seafood'
+            if (i[1].match(/Veggie/i)) return 'Veggie'
+        }).filter(e=>e)[0] || 'Veggie'
+
+        recipe.category = ['Main dish', 'starter', 'dessert', 'appetizer', 'drink', 'sauce'][Math.floor( 6 * Math.random() )]
+
+        recipe.type = recipe.steps.map(i => {
+            if (i.match(/Italian/i)) return 'Italian'
+            if (i.match(/Greek/i)) return 'Greek'
+            if (i.match(/Chinese/i)) return 'Chinese'
+            if (i.match(/Colombian/i)) return 'Colombian'
+        }).filter(e=>e)[0] || 'English'
+
         // run classifier over steps to cluster by ingredients
         let visited = {}
         recipe.steps = recipe.steps.map(text => {

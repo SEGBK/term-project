@@ -97,17 +97,15 @@ public class CookBook {
         return new Recipe(this.request("GET", "recipes/" + map.get(name) + ".json", null));
     }
 
-    /*
-    public ArrayList<Recipe> search(Query query) throws Exception {
-        ArrayList<Recipe> results = new ArrayList<Recipe>();
-
-        for (String name : this.map.getMap().keySet()) {
-            Recipe recipe = this.get(name);
-            if (query.matches(recipe)) results.add(recipe);
-        }
-
-        return results;
-    }*/
+    /**
+     * Deletes a saved Recipe object.
+     * @param name the name of a Recipe
+     * @throws Exception if JSON deserialization fails
+     * @return the Recipe object being retrieved
+     */
+    public Recipe rm(String name) throws Exception {
+        return new Recipe(this.request("DELETE", "recipes/" + map.get(name) + ".json", null));
+    }
 
     /**
      * Executes a search and calls ResultsHandler object on complete.
@@ -210,7 +208,7 @@ public class CookBook {
                     if (json.equals("null")) that.map = new RecipeMap();
                     else that.map = new RecipeMap(json);
                 } catch (Exception ex) {
-                    for (EventHandler run : that.error) run.run(ex.getMessage());
+                    for (EventHandler run : that.error) run.run(ex.getStackTrace().toString());
                 }
 
                 for (Runnable run : that.ready) run.run();
@@ -221,14 +219,16 @@ public class CookBook {
     /**
      * Add an event listener for when CookBook errors out.
      * @param run an EventHandler object to subscribe to the error event
+     * @return the CookBook object for chaining
      */
-    public void onError(EventHandler run) { this.error.add(run); }
+    public CookBook onError(EventHandler run) { this.error.add(run); return this; }
     private ArrayList<EventHandler> error;
 
     /**
      * Add an event listener for when CookBook is ready.
      * @param run an EventHandler object to subscribe to the ready event
+     * @return the CookBook object for chaining
      */
-    public void onReady(Runnable run) { this.ready.add(run); }
+    public CookBook onReady(Runnable run) { this.ready.add(run); return this; }
     private ArrayList<Runnable> ready;
 }

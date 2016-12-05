@@ -383,6 +383,9 @@ public class Recipe extends Saveable {
 
         // copy properties over
         this.setName(unwrapped.getName());
+        this.setRecipeClass(unwrapped.getRecipeClass());
+        this.setType(unwrapped.getType());
+        this.setCategory(unwrapped.getCategory());
         this.setServings(unwrapped.getServings());
         this.setPSteps(unwrapped.getPSteps());
         this.setSteps(unwrapped.getSteps());
