@@ -199,19 +199,17 @@ public class CookBook {
      */
     public CookBook() throws Exception {
         final CookBook that = this;
-        this.ready = new ArrayList<>();
-
         new Thread() {
             public void run() {
                 try {
                     String json = that.request("GET", "recipe-map.json", null);
                     if (json.equals("null")) that.map = new RecipeMap();
                     else that.map = new RecipeMap(json);
+                    for (Runnable run : that.ready) run.run();
                 } catch (Exception ex) {
+                    ex.printStackTrace();
                     for (EventHandler run : that.error) run.run(ex.getStackTrace().toString());
                 }
-
-                for (Runnable run : that.ready) run.run();
             }
         }.start();
     }
@@ -222,7 +220,7 @@ public class CookBook {
      * @return the CookBook object for chaining
      */
     public CookBook onError(EventHandler run) { this.error.add(run); return this; }
-    private ArrayList<EventHandler> error;
+    private ArrayList<EventHandler> error = new ArrayList<EventHandler>();
 
     /**
      * Add an event listener for when CookBook is ready.
@@ -230,5 +228,5 @@ public class CookBook {
      * @return the CookBook object for chaining
      */
     public CookBook onReady(Runnable run) { this.ready.add(run); return this; }
-    private ArrayList<Runnable> ready;
+    private ArrayList<Runnable> ready = new ArrayList<Runnable>();
 }
