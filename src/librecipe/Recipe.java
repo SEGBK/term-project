@@ -367,6 +367,7 @@ public class Recipe extends Saveable {
             case "prepTime": return ((Double)this.prepTime()).toString();
             case "cookTime": return ((Double)this.cookTime()).toString();
             case "time": return ((Double)this.totalTime()).toString();
+            case "limit": return null;
 
             default: throw new IllegalArgumentException("No such property: " + name);
         }

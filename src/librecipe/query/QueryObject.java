@@ -1,6 +1,7 @@
 package librecipe.query;
 
 import librecipe.Recipe;
+import java.util.ArrayList;
 
 class QueryObject {
     private String property, query;
@@ -11,33 +12,38 @@ class QueryObject {
      */
     private static Verb[] Verbs = {
         new Verb(new String[] {"has"}) {
-            public boolean test(String propertyValue, String query) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
                 return propertyValue.toLowerCase().indexOf(query.toLowerCase()) > -1;
             }
         },
         new Verb(new String[] {"is", "=", "=="}) {
-            public boolean test(String propertyValue, String query) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
                 return propertyValue.equalsIgnoreCase(query);
             }
         },
         new Verb(new String[] {">", "gt"}) {
-            public boolean test(String propertyValue, String query) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
                 return Double.parseDouble(propertyValue) > Double.parseDouble(query);
             }
         },
         new Verb(new String[] {">=", "gte"}) {
-            public boolean test(String propertyValue, String query) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
                 return Double.parseDouble(propertyValue) >= Double.parseDouble(query);
             }
         },
-        new Verb(new String[] {"<", "lt"}) {
-            public boolean test(String propertyValue, String query) {
+        new Verb(new String[] {"<", "lt", "under"}) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
                 return Double.parseDouble(propertyValue) < Double.parseDouble(query);
             }
         },
-        new Verb(new String[] {"<=", "lte"}) {
-            public boolean test(String propertyValue, String query) {
+        new Verb(new String[] {"<=", "lte", "within"}) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
                 return Double.parseDouble(propertyValue) <= Double.parseDouble(query);
+            }
+        },
+        new Verb(new String[] {"by"}) {
+            public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
+                return results.size() < Integer.parseInt(query, 10);
             }
         }
     };
@@ -72,11 +78,11 @@ class QueryObject {
      * @param recipe the Recipe object to borrow property values from
      * @return the Expression object that can be evaluated
      */
-    public Expression getQuery(Recipe recipe) {
+    public Expression getQuery(Recipe recipe, ArrayList<Recipe> results) {
         final QueryObject that = this;
         return new Expression() {
             public boolean eval() {
-                return that.verb.test(recipe.getProperty(that.property), that.query);
+                return that.verb.test(recipe.getProperty(that.property), that.query, results);
             }
         };
     }
