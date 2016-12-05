@@ -3,3 +3,15 @@ docs
 node_modules
 *.log
 scripts/recipes.jsonish
+
+
+# Android Studio Ignores
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
