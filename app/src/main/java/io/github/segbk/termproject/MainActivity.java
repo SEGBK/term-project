@@ -40,8 +40,10 @@ import io.github.segbk.termproject.listeners.RecipeListOnClickListener;
 import io.github.segbk.termproject.models.Ingredient;
 import io.github.segbk.termproject.models.Recipe;
 import io.github.segbk.termproject.models.Step;
-import librecipe.CookBook;
-import librecipe.ResultsHandler;
+
+import librecipe.*;
+import librecipe.query.*;
+
 
 
 public class MainActivity extends AppCompatActivity
@@ -80,12 +82,18 @@ public class MainActivity extends AppCompatActivity
         Step general = new Step("Dummy Step");
         Step[] stepList = {general,general,general,general};
 
+        
+
         try {
-            cookBook = new CookBook();
-            cookBook.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
-                @Override
-                public void onResults(ArrayList<librecipe.Recipe> arrayList) {
-                    Log.d("","");
+            final CookBook book = new CookBook();
+            book.onReady(new Runnable() {
+                public void run() {
+                    // here, you can hide your activity indicator and start using cookbook
+                    cookBook.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
+                        public void onResults(ArrayList<librecipe.Recipe> arrayList) {
+                            Log.d("", "");
+                        }
+                    });
                 }
             });
         } catch (Exception ex){
