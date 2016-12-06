@@ -72,6 +72,9 @@ public abstract class Test {
             });
             timeout.start();
 
+            this.attempted = 0;
+            this.passed = 0;
+
             this.test(new Runnable() {
                 public void run() {
                     if (!failed.state()) {
