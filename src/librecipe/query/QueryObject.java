@@ -18,7 +18,7 @@ class QueryObject {
         },
         new Verb(new String[] {"is", "=", "=="}) {
             public boolean test(String propertyValue, String query, ArrayList<Recipe> results) {
-                return propertyValue.equalsIgnoreCase(query);
+                return propertyValue.trim().equalsIgnoreCase(query.trim());
             }
         },
         new Verb(new String[] {">", "gt"}) {
