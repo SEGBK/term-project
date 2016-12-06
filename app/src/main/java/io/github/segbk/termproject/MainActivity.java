@@ -147,6 +147,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public boolean onQueryTextSubmit(String query) {
                 final ProgressDialog pd = new ProgressDialog(context);
+                pd.setTitle("Searching...");
                 pd.show();
                 if (query.equals(null) || query.equals("")) return true;
                 cookBook.search(query, new ResultsHandler() {
