@@ -7,11 +7,110 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="io.github.segbk.termproject.MainActivity"
-    tools:showIn="@layout/app_bar_main">
-    <ListView
-        android:id="@+id/recipe_list"
+    tools:showIn="@layout/app_bar_main"
+    android:background="@color/primary_light">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pizza"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/popular_food"
+        android:layout_above="@+id/textView3"
+        android:layout_below="@+id/textView5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pizza"
+        android:id="@+id/recent_food"
+        android:layout_alignLeft="@+id/popular_food"
+        android:layout_alignStart="@+id/popular_food"
+        android:layout_alignBottom="@+id/mostPopularScroll"
+        android:layout_below="@+id/textView3" />
+
+    <TextView
+        android:text="Most Popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView5"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:textSize="24sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@color/primary_dark" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/mostPopularScroll"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="150dp"
+        android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/popularScrollLayout"
+            android:dividerPadding="10dp"
+            android:divider="@color/transparent"
+            android:background="@android:color/white" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/mostRecentScroll"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="150dp"
+        android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/recentScrollLayout"
+            android:dividerPadding="10dp"
+            android:divider="@color/transparent"
+            android:background="@android:color/white" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:text="Most Recent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/mostRecentScroll"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/white"
+        android:background="@color/primary_dark" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/transparent">
-    </ListView>
+        android:layout_below="@+id/mostPopularScroll"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/primary_dark">
+
+    </RelativeLayout>
+
 </RelativeLayout>

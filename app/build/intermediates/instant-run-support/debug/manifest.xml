@@ -50,8 +50,8 @@
             android:name="io.github.segbk.termproject.activities.AddInstructionsStep"
             android:label="@string/title_activity_add_instructions_step"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="io.github.segbk.termproject.SplashScreen" >
-        </activity>
+        <activity android:name="io.github.segbk.termproject.SplashScreen" />
+        <activity android:name="io.github.segbk.termproject.activities.SearchActivity" />
     </application>
 
 </manifest>

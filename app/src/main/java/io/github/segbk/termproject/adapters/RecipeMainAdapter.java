@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -41,16 +42,19 @@ public class RecipeMainAdapter extends ArrayAdapter<librecipe.Recipe> {
         if (v == null) {
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.recipe_layout_item, null);
+            v = vi.inflate(R.layout.layout_recipe_homepage, null);
         }
 
         librecipe.Recipe item = getItem(position);
-
-        ((TextView)v.findViewById(R.id.item_title)).setText(item.getName());
-        ((TextView)v.findViewById(R.id.item_cook_time)).setText(item.getCategory());
-        ((TextView)v.findViewById(R.id.item_description)).setText("Description of recipe.");
-        ImageView img_background = (ImageView)v.findViewById(R.id.img_background);
-        // Picasso.with(getContext()).load(R.drawable.food).into(img_background);
+        int x = 200 + position;
+        int y = 200 + position;
+        ((TextView)v.findViewById(R.id.title)).setText(item.getName());
+        ((TextView)v.findViewById(R.id.category)).setText(item.getCategory());
+        // ((TextView)v.findViewById(R.id.item_cook_time)).setText(item.getCategory());
+        // ((TextView)v.findViewById(R.id.item_description)).setText("Description of recipe.");
+        ImageView img_background = (ImageView)v.findViewById(R.id.food_image);
+        Picasso.with(getContext()).load("http://lorempixel.com/"+ x +"/"+ y +"/food/").networkPolicy(NetworkPolicy.NO_CACHE).into(img_background);
+        //Picasso.with(getContext()).invalidate("http://lorempixel.com/"+ x +"/"+ y +"/food/");
         return v;
 
     }

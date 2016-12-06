@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim-v21/design_bottom_sheet_slide_out.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim-v21/design_appbar_state_list_animator.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim-v21/design_bottom_sheet_slide_in.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
     }
 ]

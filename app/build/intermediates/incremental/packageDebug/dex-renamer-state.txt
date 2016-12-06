@@ -1,7 +1,7 @@
-#Mon Dec 12 19:38:32 EST 2016
-base.0=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aea4fbbff6ead5c568ea57805d4ad918b7df79cf
+#Tue Dec 06 15:33:01 EST 2016
+base.0=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9b6b6cece2fb364ee41a5364e04d34fa98f876ca
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_aa9ed45ec8690a5ed2f1ee9e154bba07785654ca/classes.dex
-base.1=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_aa9ed45ec8690a5ed2f1ee9e154bba07785654ca
-file.0=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aea4fbbff6ead5c568ea57805d4ad918b7df79cf/classes.dex
+file.1=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_98e412274be0d85f7377f38386080c3fedd87af8/classes.dex
+base.1=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_98e412274be0d85f7377f38386080c3fedd87af8
+file.0=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9b6b6cece2fb364ee41a5364e04d34fa98f876ca/classes.dex

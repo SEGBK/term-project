@@ -5,39 +5,68 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="335620314658245"
-    token="-1488437559127708013"
+    timestamp="18976929225125"
+    token="-222373893569716770"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="879" />
+        duration="183" />
     <task
         name="instant-run-dex"
-        duration="128" />
+        duration="11" />
     <task
         name="instant-run-transform"
-        duration="124" />
+        duration="40" />
     <task
         name="verifier"
-        duration="25" />
+        duration="2" />
 
     <artifact
-        location="/Users/rockliang/Desktop/term-project/app/build/intermediates/reload-dex/debug/classes.dex"
+        location="/Users/cssa/Documents/term-project/app/build/intermediates/reload-dex/debug/classes.dex"
         type="RELOAD_DEX" />
 
     <build
-        timestamp="335524984661719"
+        timestamp="14362750732564"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/rockliang/Desktop/term-project/app/build/outputs/apk/app-debug.apk"
+            location="/Users/cssa/Documents/term-project/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="335620314658245"
+        timestamp="18731598619379"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="18814303032622"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/rockliang/Desktop/term-project/app/build/intermediates/reload-dex/debug/classes.dex"
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/builds/debug/18814303032622/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="18976929225125"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/cssa/Documents/term-project/app/build/intermediates/reload-dex/debug/classes.dex"
             type="RELOAD_DEX" />
     </build>
 

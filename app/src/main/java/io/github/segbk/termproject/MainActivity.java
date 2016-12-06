@@ -1,16 +1,11 @@
 package io.github.segbk.termproject;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.UiThread;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ShareCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
@@ -24,28 +19,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 import io.github.segbk.termproject.activities.NewRecipe;
+import io.github.segbk.termproject.activities.SearchActivity;
 import io.github.segbk.termproject.adapters.RecipeMainAdapter;
-import io.github.segbk.termproject.listeners.RecipeListOnClickListener;
 
 
+import io.github.segbk.termproject.listeners.RecipeOnClickListener;
 import librecipe.*;
-import librecipe.query.*;
-
 
 
 public class MainActivity extends AppCompatActivity
@@ -62,6 +51,12 @@ public class MainActivity extends AppCompatActivity
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
+        final ImageView popular_food = (ImageView)findViewById(R.id.popular_food);
+        final ImageView recent_food = (ImageView)findViewById(R.id.recent_food);
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        a.setDuration(1000);
+        popular_food.startAnimation(a);
+        recent_food.startAnimation(a);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -86,12 +81,31 @@ public class MainActivity extends AppCompatActivity
                     cookBook = book;
                     book.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
                         public void onResults(final ArrayList<librecipe.Recipe> arrayList) {
-                            final ListView recipeList = (ListView)findViewById(R.id.recipe_list);
-
+                            final LinearLayout recipeList = (LinearLayout)findViewById(R.id.recentScrollLayout);
                             MainActivity.this.runOnUiThread(new Runnable() {
                                 public void run() {
-                                    recipeList.setAdapter(new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList));
-                                    recipeList.setOnItemClickListener(new RecipeListOnClickListener(context));
+                                    recent_food.setVisibility(View.GONE);
+                                    RecipeMainAdapter recipeMainAdapter = new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList);
+                                    for(int i = 0; i < arrayList.size(); i++){
+                                        View v = recipeMainAdapter.getView(i, null, null);
+                                        v.setOnClickListener(new RecipeOnClickListener(context, arrayList.get(i)));
+                                        recipeList.addView(v);                                    }
+                                }
+                            });
+                        }
+                    });
+                    book.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
+                        public void onResults(final ArrayList<librecipe.Recipe> arrayList) {
+                            final LinearLayout recipeList = (LinearLayout)findViewById(R.id.popularScrollLayout);
+                            MainActivity.this.runOnUiThread(new Runnable() {
+                                public void run() {
+                                    popular_food.setVisibility(View.GONE);
+                                    RecipeMainAdapter recipeMainAdapter = new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList);
+                                    for(int i = 0; i < arrayList.size(); i++){
+                                        View v = recipeMainAdapter.getView(i, null, null);
+                                        v.setOnClickListener(new RecipeOnClickListener(context, arrayList.get(i)));
+                                        recipeList.addView(v);
+                                    }
                                 }
                             });
                         }
@@ -146,23 +160,43 @@ public class MainActivity extends AppCompatActivity
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                final ProgressDialog pd = new ProgressDialog(context);
-                pd.setTitle("Searching...");
-                pd.show();
                 if (query.equals(null) || query.equals("")) return true;
+
+                Intent i = new Intent(context, SearchActivity.class);
+                i.putExtra("query", query);
+                startActivity(i);
+
+                /*
                 cookBook.search(query, new ResultsHandler() {
                     @Override
                     public void onResults(final ArrayList<librecipe.Recipe> arrayList) {
+
+                        I//ntent i = new Intent(context, SearchActivity.class);
+
+                        //i.putExtra("Results", arrayList);
+
+                        //startActivity(i);
+
+
                         pd.dismiss();
                         MainActivity.this.runOnUiThread(new Runnable() {
-                            final ListView recipeList = (ListView)findViewById(R.id.recipe_list);
                             public void run() {
-                                recipeList.setAdapter(new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList));
-                                recipeList.setOnItemClickListener(new RecipeListOnClickListener(context));
+                                final LinearLayout recipeList = (LinearLayout)findViewById(R.id.popularScrollLayout);
+                                MainActivity.this.runOnUiThread(new Runnable() {
+                                    public void run() {
+                                        RecipeMainAdapter recipeMainAdapter = new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList);
+                                        for(int i = 0; i < arrayList.size(); i++){
+                                            View v = recipeMainAdapter.getView(i, null, null);
+                                            v.setOnClickListener(new RecipeOnClickListener(context, arrayList.get(i)));
+                                            recipeList.addView(v);
+                                        }
+                                    }
+                                });
                             }
                         });
+
                     }
-                });
+                });*/
                 return true;
             }
 

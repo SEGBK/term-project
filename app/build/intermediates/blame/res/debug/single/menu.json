@@ -1,22 +1,22 @@
 [
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/menu/menu_finish.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/menu/menu_finish.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/menu/menu_next.xml",
+        "source": "/Users/cssa/Documents/term-project/app/src/main/res/menu/menu_next.xml"
     },
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/menu/menu_next.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/menu/menu_next.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/menu/activity_main_drawer.xml",
+        "source": "/Users/cssa/Documents/term-project/app/src/main/res/menu/activity_main_drawer.xml"
     },
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/menu/activity_main_drawer.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/menu/activity_main_drawer.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/menu/menu_finish.xml",
+        "source": "/Users/cssa/Documents/term-project/app/src/main/res/menu/menu_finish.xml"
     },
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/menu/main.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/menu/menu_recipe.xml",
+        "source": "/Users/cssa/Documents/term-project/app/src/main/res/menu/menu_recipe.xml"
     },
     {
-        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/menu/menu_recipe.xml",
-        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/menu/menu_recipe.xml"
+        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/cssa/Documents/term-project/app/src/main/res/menu/main.xml"
     }
 ]

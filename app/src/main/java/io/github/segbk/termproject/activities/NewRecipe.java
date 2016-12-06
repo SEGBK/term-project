@@ -40,14 +40,6 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
         //LinearLayout layout = (LinearLayout)findViewById(R.id.animatelayout);
         //YoYo.with(BounceInDown).playOn(layout);
 
-        Spinner cat_spinner = (Spinner)findViewById(R.id.category_spinner);
-        ArrayAdapter<String> catSpinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Categories.getCategories());
-        cat_spinner.setAdapter(catSpinnerArrayAdapter);
-
-        Spinner type_spinner = (Spinner)findViewById(R.id.type_spinner);
-        ArrayAdapter<String> typeSpinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Type.getTypes());
-        type_spinner.setAdapter(typeSpinnerArrayAdapter);
-
         Button next_step_button = (Button)findViewById(R.id.btn_next);
         next_step_button.setOnClickListener(this);
 
@@ -56,7 +48,9 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         Intent i = new Intent(this, AddIngredientsStep.class);
-        i.putExtra("NAME", ((EditText)findViewById(R.id.name)).getText());
+        i.putExtra("name", ((EditText)findViewById(R.id.name)).getText());
+        i.putExtra("category", ((EditText)findViewById(R.id.category)).getText());
+        i.putExtra("type", ((EditText)findViewById(R.id.type)).getText());
         startActivity(i);
     }
 

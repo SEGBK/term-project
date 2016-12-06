@@ -51,8 +51,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/editText3"
-                android:hint="Description" />
+                android:id="@+id/category"
+                android:hint="Category" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -67,12 +67,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:hint="Author"
+                android:hint="Type"
                 android:ems="10"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/author" />
+                android:id="@+id/type" />
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
@@ -83,17 +83,6 @@
         android:layout_height="wrap_content"
         android:weightSum="2">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:id="@+id/category_spinner"
-            android:layout_weight="1" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:id="@+id/type_spinner"
-            android:layout_weight="1" />
     </LinearLayout>
 
     <RelativeLayout

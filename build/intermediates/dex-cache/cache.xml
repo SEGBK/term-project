@@ -3,264 +3,264 @@
 
     <item
         is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_a9c892f5a5c0ae581b19f28c51d48c6cbfd15599/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_5c747ae60541949a52df53d4c631e17f2baf1172/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_a8a5f4ca4b083028be6609607de787bb6c14c8a0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_4652750ab772f1703ce1f666471f26a8f00905eb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_2f8a6f54ba05ad16c6158f8451a6bd20d0868de4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_7b1a1f3e08da996f67e60d34f6c6b57427e15f33/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_6d0b9961bd67c643ec54429b39034420237d202b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_08ccbf9b0bb07e0d23c098d6ea23326471bc78d5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_ebb38fec739783d6d24ae045aada5d7554d5e9a7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_3b7c39173ac2ffdb220dba5401562a78cfc7062c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_ba9d239a03432fccdbac363e16b893a5b02d7b87/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_e6fc335340cda3e1d334c1a29a1ebe88a5d9298a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.daimajia.androidanimations/library/1.1.3/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="8cec50fc9cc847bad0d6ed7d93814f4b34744521">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.androidanimations-library-1.1.3_055d5867fb6eba9730bd2a58f4f559f8ab4ab399/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="f333c307db8dc307310730523e3199e173ad6f84">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_aa9ed45ec8690a5ed2f1ee9e154bba07785654ca/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_a3a4136112bf234d4954d6a24dfe4c8a7d07b011/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_9f1ad1b846625aeedf111282852239238b00dea6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.daimajia.easing/library/1.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="d7e947f993bf32a00fcb3078cdda8bb11c930afb">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.easing-library-1.0.1_3bf106a33863908783a8da34f0201d14ae940106/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_bcd20baab3d392bea17bcde00d1e83ddaf17a7de/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_9350972726f9dfd55e3a21477b09c342c644f64a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_2dc89835de858a2ea6efff483f1569aa109ee8ce/classes.dex" />
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_54966df5db5dd2430eb3991c70165c6b9d8a88ed/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/librecipe.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="227ed152d1457f80581e23af1a3db8dc5ffd16eb">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/2/librecipe_7db0299e8ae3b309124319d9a1d6023d1d4815d1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_9109bd93fb499ebfff0a39f7a9b071db7bffca1e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/lib/jackson-all-1.9.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="b9c011c6e816af0eb462770d92a278b728071d31">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-all-1.9.0_82d0bb0860b2a763415207a81bec6db78a1f9075/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_5b8e779617c99bfe64fa056c1a5f80c0d16b83a9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_2165eadd0a97f83837ee44c65212074527f826fc/classes.dex" />
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_3027337fab6b0a93394fb0d83a0a3d3521b2eaa4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_ea8b8ad845a2b9ff84507b95602f7fe359eb8daa/classes.dex" />
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_62b910a2749ff712da91695a5a23ea571610d6ff/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_5a1e397dfbc67ec96909fcb04b1b94d73b4a6a95/classes.dex" />
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_b12d0ed384c42fda6b1cce4a765cf93b6c5f7398/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="ec008b91183d8417b2af9ed485d64bf0a953d17e">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aea4fbbff6ead5c568ea57805d4ad918b7df79cf/classes.dex" />
+        sha1="ed8b3af905d286e94f4f9dbe459ba334ef63d52c">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9b6b6cece2fb364ee41a5364e04d34fa98f876ca/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rockliang/Desktop/term-project/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jar="/Users/cssa/Documents/term-project/lib/jackson-all-1.9.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_fbe1f42a287f2d3a4d3800b009da0fe7f1cb6b38/classes.dex" />
+        sha1="b9c011c6e816af0eb462770d92a278b728071d31">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-all-1.9.0_60afb79d7be72f98c57d28cd5fee5b9b80ed9527/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_c85cf8d4bb37eee3142e71d5cc6b332990acb5f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_16980d1a45023c437a92f878ab4aac4f7b799cfb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_ccd97ac071fcd6f9d47c7186f79ba84d4de44f7f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_df52bb707340cc9b711b576f392b5c1bcf33b35c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_8272e212f6d89d7736665984b97bd4a94a1ad58c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_9a54a4649582f339941d56b298f48fef61b05b93/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fb5882733d2660c70e6b6d9866deb03047816aaa">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_98e412274be0d85f7377f38386080c3fedd87af8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_3df808cc2664380c8d4ddab41143a5f49184e8b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_94596d0f2006732f3090ae3affbc8b382eb10203/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_b89c3e7e79f4a8725db9e743b4da5842a654bd0e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_62fa05804054324ea9d7bde449fefba0f894c240/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_335c9a9d5139a8b6f3c66582ffa645c289b0abe3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_029fab9ac6fdf711e56b399d208ceac175463d7b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/librecipe.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="227ed152d1457f80581e23af1a3db8dc5ffd16eb">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/2/librecipe_92c5831f06bd3ad8ed25f34847c7fca3f56f91e7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_f12c0f40d01d2a16e93f887b0aad7eb99f4024c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.daimajia.easing/library/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d7e947f993bf32a00fcb3078cdda8bb11c930afb">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.easing-library-1.0.1_e40403c6e092ac66ba31a4664b3b96337acb27d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.daimajia.androidanimations/library/1.1.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8cec50fc9cc847bad0d6ed7d93814f4b34744521">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.androidanimations-library-1.1.3_5e729b9d8bdaea9a2911094f10367378cd1165a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_e3381049a637a09c9830ba40b43085dc82619268/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_2078076137997765040a894f3e59aa21a6cf8d5b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_28a0be5c1c78ab6017378def2988e3f346b453da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_57e6ccb113108b1ee430add241acc62d3418b155/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_266d124a031f23c72e76f354bea3e3ac633fcb0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cssa/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_428200e160ee218c78772f2170b8dd1589846fee/classes.dex" />
     </item>
 
 </items>

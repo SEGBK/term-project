@@ -8,19 +8,26 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 import io.github.segbk.termproject.MainActivity;
 import io.github.segbk.termproject.R;
+import librecipe.CookBook;
+import librecipe.Step;
 
 public class AddInstructionsStep extends AppCompatActivity {
 
     final Context context = this;
     private Intent intent;
+    librecipe.Recipe submitRecipe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +56,15 @@ public class AddInstructionsStep extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        submitRecipe = new librecipe.Recipe();
+        submitRecipe.setName(intent.getStringExtra("name"));
+        submitRecipe.setCategory(intent.getStringExtra("category"));
+        submitRecipe.setType(intent.getStringExtra("type"));
+        submitRecipe.setPSteps(new ArrayList<Step>());
+        submitRecipe.setRecipeClass("");
+        submitRecipe.setServings(12);
+        submitRecipe.setSteps(new ArrayList<Step>());
     }
 
     @Override
@@ -62,6 +78,21 @@ public class AddInstructionsStep extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         intent.setClass(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        try {
+            final CookBook cookBook = new CookBook();
+            cookBook.onReady(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        cookBook.save(submitRecipe);
+                    } catch (Exception ex){
+                        Log.d("","");
+                    }
+                }
+            });
+        } catch (Exception ex) {
+
+        }
         startActivity(intent);
         return true;
     }
