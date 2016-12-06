@@ -26,20 +26,25 @@ import java.util.ArrayList;
 
 import io.github.segbk.termproject.R;
 import io.github.segbk.termproject.adapters.IngredientAdapter;
-import io.github.segbk.termproject.models.Ingredient;
+import librecipe.*;
 
 public class AddIngredientsStep extends AppCompatActivity {
 
     final Context context = this;
     private AlertDialog d;
-    private ArrayList<Ingredient> ingredients;
+    private ArrayList<librecipe.Ingredient> ingredients;
     private ListView ingredient_list;
+    private Intent intent;
+    private String[] units = {"Grams", "Cups", "Tsp", "Tbsp", "Litre", "Ml"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ingredients_step);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        intent = getIntent();
 
         getSupportActionBar().setTitle("Ingredients");
         ingredients = new ArrayList<>();
@@ -66,7 +71,6 @@ public class AddIngredientsStep extends AppCompatActivity {
                             }
                         });
                 d = builder.create();
-                String[] units = {"Grams", "Cups", "Tsp", "Tbsp", "Litre", "Ml"};
                 d.show();
                 ((Spinner)d.findViewById(R.id.unit_spinner)).setAdapter(new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, units));
             }
@@ -77,7 +81,7 @@ public class AddIngredientsStep extends AppCompatActivity {
         EditText field_ingredient = (EditText) d.findViewById(R.id.field_ingredient);
         EditText field_quantity = (EditText) d.findViewById(R.id.field_quantity);
         Spinner unit_spinner = (Spinner)d.findViewById(R.id.unit_spinner);
-        ingredients.add(new Ingredient(field_ingredient.getText().toString(), field_quantity.getText().toString() + unit_spinner.getSelectedItem().toString()));
+        ingredients.add(new Ingredient(field_ingredient.getText().toString(), Double.parseDouble(field_quantity.getText().toString()), units[unit_spinner.getSelectedItemPosition()]));
         ingredient_list.setAdapter(new IngredientAdapter(context, 0, ingredients));
     }
 
@@ -90,8 +94,9 @@ public class AddIngredientsStep extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent i = new Intent(this, AddInstructionsStep.class);
-        startActivity(i);
+        intent.setClass(this, AddInstructionsStep.class);
+        intent.putExtra("INGREDIENTS", ingredients);
+        startActivity(intent);
         return true;
     }
 }

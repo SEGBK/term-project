@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 import io.github.segbk.termproject.R;
-import io.github.segbk.termproject.models.Ingredient;
-import io.github.segbk.termproject.models.Recipe;
+
+import librecipe.*;
 
 /**
  * Created by cssa on 2016-11-16.
@@ -40,11 +40,11 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
 
         Ingredient item = getItem(position);
 
-        if (item.getIngredientName()!= null){
-            ((TextView)v.findViewById(R.id.ingredient_name)).setText(item.getIngredientName());
+        if (item.getName()!= null){
+            ((TextView)v.findViewById(R.id.ingredient_name)).setText(item.getName());
         }
-        if (item.getQuantity()!= null){
-            ((TextView)v.findViewById(R.id.ingredient_quantity)).setText(item.getQuantity());
+        if (String.valueOf(item.getQuantity()) != null){
+            ((TextView)v.findViewById(R.id.ingredient_quantity)).setText(String.valueOf(item.getQuantity()));
         }
         return v;
     }

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -55,6 +56,7 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         Intent i = new Intent(this, AddIngredientsStep.class);
+        i.putExtra("NAME", ((EditText)findViewById(R.id.name)).getText());
         startActivity(i);
     }
 

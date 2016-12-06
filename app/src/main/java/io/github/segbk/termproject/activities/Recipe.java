@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.codehaus.jackson.smile.Tool;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -47,6 +49,8 @@ public class Recipe extends AppCompatActivity {
 
         TextView Content = (TextView)findViewById(R.id.recipe_content);
         CollapsingToolbarLayout Toolbar = (CollapsingToolbarLayout)findViewById(R.id.toolbar_layout);
+        Toolbar.setTitle(Title);
+
         try {
             Content.setText(Ingredients + "\n\n\n" + Steps);
         } catch (Exception ex){

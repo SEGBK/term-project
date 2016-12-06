@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
 import io.github.segbk.termproject.R;
-import io.github.segbk.termproject.models.Recipe;
+import librecipe.*;
 
 /**
  * Created by cssa on 2016-11-14.
@@ -34,7 +34,7 @@ public class RecipeStepEditAdapter extends ArrayAdapter<Recipe> {
 
         Recipe item = getItem(position);
 
-        ((EditText)v.findViewById(R.id.stepText)).setText(item.getTitle());
+        ((EditText)v.findViewById(R.id.stepText)).setText(item.getName());
 
         return v;
 

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 
-import io.github.segbk.termproject.models.Recipe;
+import librecipe.*;
 /**
  * Created by cssa on 2016-11-02.
  */
@@ -19,13 +19,16 @@ public class RecipeListOnClickListener implements AdapterView.OnItemClickListene
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Recipe selected = ((Recipe) adapterView.getAdapter().getItem(i));
+        librecipe.Recipe selected = ((librecipe.Recipe) adapterView.getAdapter().getItem(i));
         Intent intent = new Intent(context, io.github.segbk.termproject.activities.Recipe.class);
-
-        intent.putExtra("TITLE", selected.getTitle());
-        intent.putExtra("INGREDIENTS", selected.getIngredients());
-        intent.putExtra("STEPS", selected.getSteps());
-        intent.putExtra("IMAGE", selected.getImage());
+        String s = "";
+        for(librecipe.Step step : selected.getPSteps()){
+            s += step.getText() + "\n";
+        }
+        intent.putExtra("TITLE", selected.getName());
+        intent.putExtra("INGREDIENTS", s);
+        intent.putExtra("STEPS", selected.getRecipeClass());
+        intent.putExtra("IMAGE", "");
 
         context.startActivity(intent);
     }

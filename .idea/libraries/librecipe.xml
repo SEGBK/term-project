@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="librecipe">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/librecipe.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

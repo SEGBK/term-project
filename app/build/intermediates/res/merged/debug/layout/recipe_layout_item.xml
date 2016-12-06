@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:id="@+id/parent_layout">
+    android:id="@+id/parent_layout"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
 
     <ImageView
         android:layout_width="50dp"
@@ -13,9 +15,10 @@
         android:layout_alignBottom="@id/activation_layout"
         android:layout_alignLeft="@id/activation_layout"
         android:layout_alignRight="@id/activation_layout"
-        app:srcCompat="@drawable/food"
+        app:srcCompat="@color/primary"
         android:id="@+id/img_background"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:background="@color/primary" />
 
     <LinearLayout
         android:orientation="vertical"

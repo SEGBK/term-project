@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="aa663329e19705449296d31bcc605a4dfc572a7d">
+        sha1="f50fe2066bf3b3044ba7324407dac6a6b49e060b">
         <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9\classes.dex" />
     </item>
     <item
@@ -147,6 +147,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Brennan\Documents\term-project\lib\jackson-all-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b9c011c6e816af0eb462770d92a278b728071d31">
+        <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\2\jackson-all-1.9.0_29ab6f0856cba42e2aa8b0f9739d3499d3abe500\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Brennan\Documents\term-project\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
@@ -196,7 +205,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="633d4dd468c800727578d66d6ad88777b484d6b4">
+        sha1="289899f64911b426ca0af50c0abedd616bf473cd">
         <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1\classes.dex" />
     </item>
     <item
@@ -214,7 +223,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="3fae4d6a5d555573774227da9e0d0598fd88c217">
+        sha1="227ed152d1457f80581e23af1a3db8dc5ffd16eb">
         <dex dex="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\2\librecipe_628304392d38c3e2011ff6767e2fcd2ec48c9a33\classes.dex" />
     </item>
     <item

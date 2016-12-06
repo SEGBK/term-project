@@ -5,40 +5,40 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="50994110568525"
+    timestamp="65438119452714"
     token="5659449351614543342"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="313" />
+        duration="409" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="12" />
     <task
         name="instant-run-transform"
-        duration="27" />
+        duration="91" />
     <task
         name="verifier"
-        duration="4" />
+        duration="7" />
 
     <artifact
-        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
-        timestamp="50635173329407"
+        timestamp="65378651374404"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Brennan\Documents\term-project\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="50994110568525"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="65438119452714"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

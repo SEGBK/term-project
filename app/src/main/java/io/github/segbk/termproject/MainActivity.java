@@ -1,11 +1,13 @@
 package io.github.segbk.termproject;
 
 import android.app.ActionBar;
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.UiThread;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ShareCompat;
@@ -39,9 +41,7 @@ import java.util.concurrent.ExecutionException;
 import io.github.segbk.termproject.activities.NewRecipe;
 import io.github.segbk.termproject.adapters.RecipeMainAdapter;
 import io.github.segbk.termproject.listeners.RecipeListOnClickListener;
-import io.github.segbk.termproject.models.Ingredient;
-import io.github.segbk.termproject.models.Recipe;
-import io.github.segbk.termproject.models.Step;
+
 
 import librecipe.*;
 import librecipe.query.*;
@@ -72,20 +72,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Ingredient sugar = new Ingredient("sugar","1 TSP");
-        Ingredient flour = new Ingredient("flour","2 Cups");
-        Ingredient salt = new Ingredient("salt","1 Pinch");
-        Ingredient water = new Ingredient("water","1 Cup");
-
-        Ingredient[] i = {sugar, flour};
-        Ingredient[] i2 = {flour, water};
-        Ingredient[] i3 = {water, salt};
-
-        Step general = new Step("Dummy Step");
-        Step[] stepList = {general,general,general,general};
-
-
-
         try {
             final CookBook book = new CookBook();
 
@@ -97,10 +83,17 @@ public class MainActivity extends AppCompatActivity
 
             book.onReady(new Runnable() {
                 public void run() {
-                    // here, you can hide your activity indicator and start using cookbook
-                    cookBook.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
-                        public void onResults(ArrayList<librecipe.Recipe> arrayList) {
-                            Log.d("", "");
+                    cookBook = book;
+                    book.search("(time > 0) AND (limit by 10)", new ResultsHandler() {
+                        public void onResults(final ArrayList<librecipe.Recipe> arrayList) {
+                            final ListView recipeList = (ListView)findViewById(R.id.recipe_list);
+
+                            MainActivity.this.runOnUiThread(new Runnable() {
+                                public void run() {
+                                    recipeList.setAdapter(new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList));
+                                    recipeList.setOnItemClickListener(new RecipeListOnClickListener(context));
+                                }
+                            });
                         }
                     });
                 }
@@ -109,13 +102,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        ListView recipeList = (ListView)findViewById(R.id.recipe_list);
-        ArrayList<Recipe> l = new ArrayList<Recipe>();
-        l.add(new Recipe("Sugar and Flour",i,stepList, "http://weknowyourdreams.com/images/food/food-07.jpg"));
-        l.add(new Recipe("Water and Flour",i2,stepList,"http://www.seattleorganicrestaurants.com/vegan-whole-foods/images/Food-Guidelines.jpg"));
-        l.add(new Recipe("Saltwater",i3,stepList,"http://dreamatico.com/data_images/food/food-6.jpg"));
-        recipeList.setAdapter(new RecipeMainAdapter(this, R.layout.recipe_layout_item, l));
-        recipeList.setOnItemClickListener(new RecipeListOnClickListener(this));
+
     }
 
     @Override
@@ -159,12 +146,27 @@ public class MainActivity extends AppCompatActivity
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                return false;
+                final ProgressDialog pd = new ProgressDialog(context);
+                pd.show();
+                if (query.equals(null) || query.equals("")) return true;
+                cookBook.search(query, new ResultsHandler() {
+                    @Override
+                    public void onResults(final ArrayList<librecipe.Recipe> arrayList) {
+                        pd.dismiss();
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            final ListView recipeList = (ListView)findViewById(R.id.recipe_list);
+                            public void run() {
+                                recipeList.setAdapter(new RecipeMainAdapter(context, R.layout.recipe_layout_item, arrayList));
+                                recipeList.setOnItemClickListener(new RecipeListOnClickListener(context));
+                            }
+                        });
+                    }
+                });
+                return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                Toast.makeText(context, newText, Toast.LENGTH_SHORT).show();
                 return true;
             };
         });
