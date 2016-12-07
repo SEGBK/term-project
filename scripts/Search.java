@@ -18,7 +18,11 @@ public class Search {
                 book.search(builder.toString(), new ResultsHandler() {
                     public void onResults(ArrayList<Recipe> recipes) {
                         System.out.format("Results:\n");
-                        for (Recipe r : recipes) System.out.format(" * %s\n", r.getName());
+                        for (Recipe r : recipes) System.out.format(
+                          " * %s (type=%s, category=%s, class=%s)\n",
+                          r.getName(), r.getType(),
+                          r.getCategory(), r.getRecipeClass()
+                        );
                     }
                 });
             }
