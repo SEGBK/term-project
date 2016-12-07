@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="io.github.segbk.termproject.MainActivity"
-    tools:showIn="@layout/app_bar_main"
-    android:background="@color/primary_light">
+    tools:showIn="@layout/app_bar_main">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -44,8 +43,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:background="@color/primary_dark" />
+        android:textColor="@android:color/black" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -100,16 +98,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="@android:color/white"
-        android:background="@color/primary_dark" />
+        android:textColor="@android:color/black" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/mostPopularScroll"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/primary_dark">
+        android:layout_alignParentStart="true">
 
     </RelativeLayout>
 

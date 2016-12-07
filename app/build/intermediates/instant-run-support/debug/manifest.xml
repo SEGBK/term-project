@@ -52,6 +52,20 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="io.github.segbk.termproject.SplashScreen" />
         <activity android:name="io.github.segbk.termproject.activities.SearchActivity" />
+        <activity android:name="io.github.segbk.termproject.activities.CategoriesActivity" />
+        <activity
+            android:name="io.github.segbk.termproject.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="io.github.segbk.termproject.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
     </application>
 
 </manifest>

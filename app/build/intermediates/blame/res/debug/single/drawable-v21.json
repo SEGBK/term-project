@@ -1,54 +1,54 @@
 [
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/notification_action_background.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_send.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_menu_send.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_send.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_menu_send.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_share.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_menu_share.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\btn_submit_ripple.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\btn_submit_ripple.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_gallery.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_menu_gallery.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/drawable-v21/design_bottom_navigation_item_background.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/btn_submit_ripple.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/btn_submit_ripple.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_settings_black_24dp.png",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_settings_black_24dp.png"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_manage.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_menu_manage.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_camera.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/cssa/Documents/term-project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_share.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_menu_share.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_settings_black_24dp.png",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_settings_black_24dp.png"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_slideshow.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_slideshow.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_menu_slideshow.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_manage.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_menu_manage.xml"
     },
     {
-        "merged": "/Users/cssa/Documents/term-project/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_camera.xml",
-        "source": "/Users/cssa/Documents/term-project/app/src/main/res/drawable-v21/ic_menu_camera.xml"
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_menu_gallery.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-v21\\ic_menu_gallery.xml"
     }
 ]

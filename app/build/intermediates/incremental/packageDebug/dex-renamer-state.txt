@@ -1,7 +1,7 @@
-#Tue Dec 06 15:33:01 EST 2016
-base.0=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9b6b6cece2fb364ee41a5364e04d34fa98f876ca
+#Tue Dec 06 23:19:41 EST 2016
+base.0=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_98e412274be0d85f7377f38386080c3fedd87af8/classes.dex
-base.1=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_98e412274be0d85f7377f38386080c3fedd87af8
-file.0=/Users/cssa/Documents/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9b6b6cece2fb364ee41a5364e04d34fa98f876ca/classes.dex
+file.1=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9\\classes.dex
+base.1=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9
+file.0=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1\\classes.dex

@@ -43,8 +43,12 @@
             android:name=".activities.AddInstructionsStep"
             android:label="@string/title_activity_add_instructions_step"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen"></activity>
-        <activity android:name=".activities.SearchActivity"></activity>
+        <activity android:name=".SplashScreen" />
+        <activity android:name=".activities.SearchActivity" />
+        <activity android:name=".activities.CategoriesActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>

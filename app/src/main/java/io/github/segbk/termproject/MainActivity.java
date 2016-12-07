@@ -28,6 +28,7 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
+import io.github.segbk.termproject.activities.CategoriesActivity;
 import io.github.segbk.termproject.activities.NewRecipe;
 import io.github.segbk.termproject.activities.SearchActivity;
 import io.github.segbk.termproject.adapters.RecipeMainAdapter;
@@ -135,13 +136,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_list) {
-
+            Intent i = new Intent(this, CategoriesActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_settings) {
-
-        } else if (id == R.id.nav_share) {
-
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
