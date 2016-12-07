@@ -31,7 +31,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, SearchActivity.class);
-                i.putExtra("query", "appetiser");
+                i.putExtra("query", "(category is appetizer)");
                 startActivity(i);
             }
         });
@@ -39,7 +39,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, SearchActivity.class);
-                i.putExtra("query", "main dish");
+                i.putExtra("query", "(category is main dish)");
                 startActivity(i);
             }
         });
@@ -47,7 +47,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, SearchActivity.class);
-                i.putExtra("query", "drink");
+                i.putExtra("query", "(category is drink)");
                 startActivity(i);
             }
         });
@@ -55,7 +55,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, SearchActivity.class);
-                i.putExtra("query", "dessert");
+                i.putExtra("query", "(category is dessert)");
                 startActivity(i);
             }
         });

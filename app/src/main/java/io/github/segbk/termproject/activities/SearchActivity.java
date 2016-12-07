@@ -31,7 +31,7 @@ public class SearchActivity extends AppCompatActivity {
 
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("Searching for");
-        pd.setTitle(query);
+        pd.setMessage(query);
         pd.show();
         try {
             final CookBook book = new CookBook();

@@ -5,26 +5,29 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="39100282840995"
+    timestamp="39337482497161"
     token="5659449351614543342"
-    verifier="CLASS_ADDED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="438" />
+        duration="304" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="4" />
     <task
         name="instant-run-transform"
-        duration="78" />
+        duration="13" />
     <task
         name="verifier"
-        duration="37" />
+        duration="2" />
 
     <artifact
-        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
-        type="DEX" />
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         timestamp="38581448480649"
@@ -36,9 +39,6 @@
     <build
         timestamp="38920895518926"
         verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
         <artifact
             location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
             type="DEX" />
@@ -58,6 +58,30 @@
         <artifact
             location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
             type="DEX" />
+    </build>
+    <build
+        timestamp="39222611604731"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\builds\debug\39222611604731\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="39271697610158"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\builds\debug\39271697610158\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="39337482497161"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
