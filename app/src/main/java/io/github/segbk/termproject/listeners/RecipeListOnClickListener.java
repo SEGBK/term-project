@@ -21,9 +21,10 @@ public class RecipeListOnClickListener implements AdapterView.OnItemClickListene
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         librecipe.Recipe selected = ((librecipe.Recipe) adapterView.getAdapter().getItem(i));
         Intent intent = new Intent(context, io.github.segbk.termproject.activities.Recipe.class);
-        String s = "";
-        for(librecipe.Step step : selected.getPSteps()){
-            s += step.getText() + "\n";
+
+        String[] s = new String[selected.getPSteps().size()];
+        for(int iter = 0; iter < selected.getPSteps().size(); iter++){
+            s[iter] = selected.getPSteps().get(iter).getText();
         }
         intent.putExtra("TITLE", selected.getName());
         intent.putExtra("INGREDIENTS", s);

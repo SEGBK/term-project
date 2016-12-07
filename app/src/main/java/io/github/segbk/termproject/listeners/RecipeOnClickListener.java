@@ -23,13 +23,13 @@ public class RecipeOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(context, io.github.segbk.termproject.activities.Recipe.class);
-        String s = "";
-        for(librecipe.Step step : recipe.getPSteps()){
-            s += step.getText() + "\n";
+        String[] s = new String[recipe.getPSteps().size()];
+        for(int i = 0; i < recipe.getPSteps().size(); i++){
+            s[i] = recipe.getPSteps().get(i).getText();
         }
         intent.putExtra("TITLE", recipe.getName());
         intent.putExtra("INGREDIENTS", s);
-        intent.putExtra("STEPS", recipe.getRecipeClass());
+        intent.putExtra("CATEGORY", recipe.getRecipeClass());
         intent.putExtra("IMAGE", "");
 
         context.startActivity(intent);

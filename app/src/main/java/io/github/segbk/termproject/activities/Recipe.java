@@ -35,8 +35,8 @@ import io.github.segbk.termproject.R;
 public class Recipe extends AppCompatActivity {
 
     private String Title;
-    private String Steps;
-    private String Ingredients;
+    private String Category;
+    private String[] Ingredients;
     private String ImageURL;
 
     @Override
@@ -49,16 +49,20 @@ public class Recipe extends AppCompatActivity {
         Intent intent = getIntent();
 
         Title = intent.getStringExtra("TITLE");
-        Ingredients = intent.getStringExtra("INGREDIENTS");
-        Steps = intent.getStringExtra("STEPS");
+        Ingredients = intent.getStringArrayExtra("INGREDIENTS");
+        Category = intent.getStringExtra("CATEGORY");
         ImageURL = intent.getStringExtra("IMAGE");
 
         TextView Content = (TextView)findViewById(R.id.recipe_content);
         CollapsingToolbarLayout Toolbar = (CollapsingToolbarLayout)findViewById(R.id.toolbar_layout);
         Toolbar.setTitle(Title);
+        String finalString = "";
+        for(String s : Ingredients){
+            finalString += s + "\n";
+        }
 
         try {
-            Content.setText(Ingredients + "\n\n\n" + Steps);
+            Content.setText("Category:" + Category + "\n" + finalString);
         } catch (Exception ex){
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
         }

@@ -32,10 +32,6 @@
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\layout\\activity_categories.xml"
     },
     {
-        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
         "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_recipe.xml",
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\layout\\activity_recipe.xml"
     },
@@ -44,16 +40,20 @@
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
         "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media.xml"
-    },
-    {
         "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
