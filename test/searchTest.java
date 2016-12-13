@@ -7,7 +7,6 @@ import test.util.*;
 
 
 public class searchTest extends Test{
-  Query query  = new Query("Test query");
   public ArrayList<Recipe> searchTestCase;
   String [] recipe_Name ={"Teaxs Burger ","NewYork Steaks ","Meat Subs ", "Mexcian Burger ","Cheese Cake ","Youger ","Fried Chicken ","Seasoning Salmon "};
   String [] ingredient_Name={"tomato ","cutted beef ","steak ","pork ","meat sauces ","pork belly ",
@@ -20,7 +19,13 @@ public class searchTest extends Test{
 
   public void test(Runnable end) throws Throwable{
     searchTestCase=this.generatetest();
-
+    Recipe texBurger = new Recipe(); texBurger.setName("Texas Burger");
+    equal(new Query("((name has Texas Burger))").matches(texBurger, null),true,"Searching names");
+    equal(new Query("((name has Texas Burger))").matches(texBurger, null),true,"Searching ingreidents");
+    equal(new Query("((name has Texas Burger))").matches(texBurger, null),true,"Searching and boolean");
+    equal(new Query("((name has Texas Burger))").matches(texBurger, null),true,"Searching or boolean");
+    equal(new Query("((name has Texas Burger))").matches(texBurger, null),true,"Searching related names");
+    equal(new Query("((name has Texas Burger))").matches(texBurger, null),true,"Searching related ingreidents");
     end.run();
   }
   private static void printRecipe(Recipe recipe) {
