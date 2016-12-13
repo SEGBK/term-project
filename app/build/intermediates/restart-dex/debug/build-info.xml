@@ -5,39 +5,39 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="65438119452714"
-    token="5659449351614543342"
+    timestamp="335620314658245"
+    token="-1488437559127708013"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="409" />
+        duration="879" />
     <task
         name="instant-run-dex"
-        duration="12" />
+        duration="128" />
     <task
         name="instant-run-transform"
-        duration="91" />
+        duration="124" />
     <task
         name="verifier"
-        duration="7" />
+        duration="25" />
 
     <artifact
-        location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\reload-dex\debug\classes.dex"
+        location="/Users/rockliang/Desktop/term-project/app/build/intermediates/reload-dex/debug/classes.dex"
         type="RELOAD_DEX" />
 
     <build
-        timestamp="65378651374404"
+        timestamp="335524984661719"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Brennan\Documents\term-project\app\build\outputs\apk\app-debug.apk"
+            location="/Users/rockliang/Desktop/term-project/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="65438119452714"
+        timestamp="335620314658245"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\Brennan\Documents\term-project\app\build\intermediates\reload-dex\debug\classes.dex"
+            location="/Users/rockliang/Desktop/term-project/app/build/intermediates/reload-dex/debug/classes.dex"
             type="RELOAD_DEX" />
     </build>
 

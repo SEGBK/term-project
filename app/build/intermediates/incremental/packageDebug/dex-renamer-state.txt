@@ -1,7 +1,7 @@
-#Mon Dec 05 19:06:26 EST 2016
-base.0=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1
+#Mon Dec 12 19:38:32 EST 2016
+base.0=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aea4fbbff6ead5c568ea57805d4ad918b7df79cf
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9\\classes.dex
-base.1=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_09fe6cd345525750c915d25c1bcc98fdeb3d6db9
-file.0=C\:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_265ab4e205a5d7655ee4e9cf84805a59001870a1\\classes.dex
+file.1=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_aa9ed45ec8690a5ed2f1ee9e154bba07785654ca/classes.dex
+base.1=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_aa9ed45ec8690a5ed2f1ee9e154bba07785654ca
+file.0=/Users/rockliang/Desktop/term-project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aea4fbbff6ead5c568ea57805d4ad918b7df79cf/classes.dex

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_search_white_24dp.png",
-        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_search_white_24dp.png"
+        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_search_white_24dp.png",
+        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/drawable-xxxhdpi/ic_search_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_add_white_24dp.png",
-        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_add_white_24dp.png"
+        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_add_white_24dp.png",
+        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/drawable-xxxhdpi/ic_add_white_24dp.png"
     },
     {
-        "merged": "C:\\Users\\Brennan\\Documents\\term-project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_settings_black_24dp.png",
-        "source": "C:\\Users\\Brennan\\Documents\\term-project\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_settings_black_24dp.png"
+        "merged": "/Users/rockliang/Desktop/term-project/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_settings_black_24dp.png",
+        "source": "/Users/rockliang/Desktop/term-project/app/src/main/res/drawable-xxxhdpi/ic_settings_black_24dp.png"
     }
 ]
