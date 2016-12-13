@@ -16,6 +16,7 @@ public final class Runner {
                  */
                  new SampleTest(),
                  new unitTest(),
+                 new searchTest(),
             };
 
             public void run(Boolean success) {
